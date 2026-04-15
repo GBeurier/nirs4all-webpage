@@ -547,8 +547,24 @@
       border-color: transparent; color: #fff;
       box-shadow: 0 6px 18px -4px rgba(13,148,136,0.5);
     }
-    .screenshot-panel { display: none; }
-    .screenshot-panel.active { display: block; }
+    .screenshots-carousel { position: relative; }
+    .screenshot-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .screenshot-panel {
+      grid-column: 1;
+      grid-row: 1;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .55s ease;
+    }
+    .screenshot-panel.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
     .screenshot-frame {
       position: relative; border-radius: 14px;
       background: linear-gradient(180deg, #1c2b44 0%, #0d1626 100%);
@@ -968,7 +984,7 @@
     <div class="eyebrow-wrap fade-in"><span class="eyebrow">nirs4all Studio</span></div>
     <h2 class="section-title fade-in">See it <em>in action</em></h2>
     <p class="section-sub fade-in">Interactive desktop application for exploring data, building pipelines, and analyzing results &mdash; no code required.</p>
-    <div class="fade-in">
+    <div class="fade-in screenshots-carousel" id="studio-carousel">
       <div class="screenshots-tabs">
         <button class="tab-btn active" data-tab="playground">Playground</button>
         <button class="tab-btn" data-tab="inspector">Inspector</button>
@@ -979,53 +995,55 @@
         <button class="tab-btn" data-tab="predictions">Predictions</button>
         <button class="tab-btn" data-tab="synthesis">Data Synthesis</button>
       </div>
+      <div class="screenshot-stack">
       <div id="tab-playground" class="screenshot-panel active">
         <div class="screenshot-frame">
-          <img src="assets/playground-page.png" alt="Playground — interactive spectral exploration" loading="lazy" />
+          <img src="assets/playground-page.png" alt="Playground — interactive spectral exploration" />
         </div>
         <p class="screenshot-caption">The Playground &mdash; interactive spectral visualization with real-time preprocessing, distribution charts, stacked composition views, and PCA analysis.</p>
       </div>
       <div id="tab-results" class="screenshot-panel">
         <div class="screenshot-frame">
-          <img src="assets/results-page.png" alt="Results and model ranking page" loading="lazy" />
+          <img src="assets/results-page.png" alt="Results and model ranking page" />
         </div>
         <p class="screenshot-caption">Model ranking with cross-validation scores, RMSE, R&sup2;, and performance metrics &mdash; compare dozens of pipeline variants side by side.</p>
       </div>
       <div id="tab-runs" class="screenshot-panel">
         <div class="screenshot-frame">
-          <img src="assets/runs-page.png" alt="Runs overview page" loading="lazy" />
+          <img src="assets/runs-page.png" alt="Runs overview page" />
         </div>
         <p class="screenshot-caption">Runs overview &mdash; track all experiments, filter by status, and navigate your workspace history.</p>
       </div>
       <div id="tab-predictions" class="screenshot-panel">
         <div class="screenshot-frame">
-          <img src="assets/predictions-page.png" alt="Predictions analysis page" loading="lazy" />
+          <img src="assets/predictions-page.png" alt="Predictions analysis page" />
         </div>
         <p class="screenshot-caption">Predictions page &mdash; visualize predicted vs. actual values, inspect residuals, and export results.</p>
       </div>
       <div id="tab-inspector" class="screenshot-panel">
         <div class="screenshot-frame">
-          <img src="assets/inspector-after-refresh.jpg" alt="Inspector tool" loading="lazy" />
+          <img src="assets/inspector-after-refresh.jpg" alt="Inspector tool" />
         </div>
         <p class="screenshot-caption">The Inspector &mdash; deep-dive into individual predictions, spectral contributions, and outlier detection across samples.</p>
       </div>
             <div id="tab-pipeline" class="screenshot-panel">
         <div class="screenshot-frame">
-          <img src="assets/pipeline-page.png" alt="Pipeline tool" loading="lazy" />
+          <img src="assets/pipeline-page.png" alt="Pipeline tool" />
         </div>
         <p class="screenshot-caption">The Pipeline &mdash; configure and manage your data processing pipelines with ease.</p>
       </div>
             <div id="tab-shap" class="screenshot-panel">
         <div class="screenshot-frame">
-          <img src="assets/shap-page.png" alt="SHAP tool" loading="lazy" />
+          <img src="assets/shap-page.png" alt="SHAP tool" />
         </div>
         <p class="screenshot-caption">The SHAP &mdash; visualize feature importance and contributions for model predictions.</p>
       </div>
             <div id="tab-synthesis" class="screenshot-panel">
         <div class="screenshot-frame">
-          <img src="assets/synthesis-page.png" alt="Synthesis tool" loading="lazy" />
+          <img src="assets/synthesis-page.png" alt="Synthesis tool" />
         </div>
         <p class="screenshot-caption">The Synthesis &mdash; allow users to generate synthetic data and explore hypothetical scenarios.</p>
+      </div>
       </div>
     </div>
   </div>
@@ -1262,16 +1280,15 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
     <p class="section-sub fade-in">Researchers and engineers from the PHENOMEN team at CIRAD / UMR AGAP Institut, building open-source tools for spectroscopy science.</p>
     <div class="team-grid">
       <div class="team-card fade-in">
-        <div class="avatar avatar-gb"><img src="assets/greg.png" alt="Gregory Beurier" /></div>
+        <div class="avatar avatar-gb"><img src="assets/greg.jpg" alt="Gregory Beurier" /></div>
         <h3>Gregory Beurier</h3>
-        <div class="team-role">Lead Developer &amp; Maintainer</div>
+        <div class="team-role">Co-founder &amp; Lead Developer</div>
         <div class="team-org">CIRAD &middot; UMR AGAP Institut</div>
         <div class="team-tags">
-          <span class="team-tag">Founder</span>
-          <span class="team-tag">Architecture</span>
-          <span class="team-tag">ML Pipelines</span>
-          <span class="team-tag">Python Library</span>
-          <span class="team-tag">Desktop App</span>
+          <span class="team-tag">AI</span>
+          <span class="team-tag">Modelization</span>
+          <span class="team-tag">Dev</span>
+          <span class="team-tag">Optimization</span>
         </div>
       </div>
       <div class="team-card fade-in">
@@ -1280,10 +1297,9 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
         <div class="team-role">Co-founder &amp; Product Owner</div>
         <div class="team-org">CIRAD &middot; UMR AGAP Institut</div>
         <div class="team-tags">
-          <span class="team-tag">Co-founder</span>
-          <span class="team-tag">Research</span>
-          <span class="team-tag">NIRS Expertise</span>
-          <span class="team-tag">Contributor</span>
+          <span class="team-tag">Ecophysiology</span>
+          <span class="team-tag">Data Science</span>
+          <span class="team-tag">Chemometrics</span>
         </div>
       </div>
       <div class="team-card fade-in">
@@ -1292,10 +1308,9 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
         <div class="team-role">Co-founder &amp; Contributor</div>
         <div class="team-org">CIRAD &middot; UMR AGAP Institut</div>
         <div class="team-tags">
-          <span class="team-tag">Co-founder</span>
-          <span class="team-tag">Testing</span>
-          <span class="team-tag">Validation</span>
-          <span class="team-tag">Research</span>
+          <span class="team-tag">Biostatistics</span>
+          <span class="team-tag">Data Science</span>
+          <span class="team-tag">Optimization</span>
         </div>
       </div>
     </div>
@@ -1469,15 +1484,44 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Screenshot tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.screenshot-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  // Screenshot carousel (auto-rotating with preload + crossfade)
+  (() => {
+    const carousel = document.getElementById('studio-carousel');
+    if (!carousel) return;
+    // Preload & decode all carousel images up-front so switches never flicker
+    carousel.querySelectorAll('.screenshot-panel img').forEach(img => {
+      const pre = new Image();
+      pre.src = img.currentSrc || img.src;
+      if (pre.decode) pre.decode().catch(() => {});
     });
-  });
+    const btns = Array.from(carousel.querySelectorAll('.tab-btn'));
+    const activate = (tab) => {
+      btns.forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+      carousel.querySelectorAll('.screenshot-panel').forEach(p => {
+        p.classList.toggle('active', p.id === 'tab-' + tab);
+      });
+    };
+    let idx = btns.findIndex(b => b.classList.contains('active'));
+    if (idx < 0) idx = 0;
+    const AUTOPLAY_MS = 4500;
+    let timer = null;
+    const start = () => { stop(); timer = setInterval(next, AUTOPLAY_MS); };
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+    const next = () => { idx = (idx + 1) % btns.length; activate(btns[idx].dataset.tab); };
+    btns.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        idx = i;
+        activate(btn.dataset.tab);
+        start();
+      });
+    });
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    document.addEventListener('visibilitychange', () => {
+      document.hidden ? stop() : start();
+    });
+    start();
+  })();
 
   // Lightbox
   const lb = document.getElementById('lightbox');
