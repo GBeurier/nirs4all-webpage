@@ -423,6 +423,12 @@
       backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       font-family: var(--mono); font-weight: 500;
     }
+    .badge .live-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.16), 0 0 14px rgba(34,197,94,0.7);
+      animation: pulse 2s infinite;
+    }
     .badge .b-label { color: var(--text-3); margin-right: 2px; }
 
     /* ── Overview ───────────────────────────────────────────────── */
@@ -903,7 +909,7 @@
       </div>
     </div>
     <div class="hero-badges">
-      <div class="badge"><span class="dot"></span> Active Development &middot; <span data-lib-version-prefix>v0.8.8</span></div>
+      <span class="badge"> Active Development   <span class="live-dot" aria-hidden="true"></span></span>
       <span class="badge"><span class="b-label">version</span> <span data-lib-version>0.8.8</span></span>
       <span class="badge"><span class="b-label">python</span> 3.11 · 3.12 · 3.13</span>
       <span class="badge"><span class="b-label">license</span> CeCILL-2.1</span>
