@@ -2,19 +2,7 @@
 
 Official landing page for [nirs4all](https://github.com/GBeurier/nirs4all) and [nirs4all Studio](https://github.com/GBeurier/nirs4all-webapp).
 
-A single-file, zero-dependency static page — no build step, no framework.
-
-## Hosting on GitHub Pages (nirs4all.github.io)
-
-To serve this page at `https://nirs4all.github.io`:
-
-1. Create a GitHub **organization** named `nirs4all` (if not already exists)
-2. Fork or push this repository into that organization as **`nirs4all.github.io`**
-3. Go to the repo **Settings → Pages**
-4. Under **Source**, select **GitHub Actions**
-5. Push to `main` — the included workflow deploys automatically
-
-The page will then be live at `https://nirs4all.github.io`.
+Visible at [nirs4all.org](https://nirs4all.org)
 
 ## Local preview
 
