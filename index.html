@@ -446,6 +446,8 @@
       animation: pulse 2s infinite;
     }
     .badge .b-label { color: var(--text-3); margin-right: 2px; }
+    a.badge { color: var(--text-2); text-decoration: none; transition: border-color .2s, background .2s; }
+    a.badge:hover { color: var(--text-2); border-color: var(--teal); background: rgba(255,255,255,0.85); }
 
     /* ── Overview ───────────────────────────────────────────────── */
     .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -918,7 +920,11 @@
       </a>
       <a href="https://github.com/GBeurier/nirs4all" target="_blank" class="btn-hero">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        View on GitHub
+        Lib on GitHub
+      </a>
+      <a href="https://github.com/GBeurier/nirs4all-webapp" target="_blank" class="btn-hero">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        Studio on GitHub
       </a>
     </div>
     <div class="hero-download">
@@ -942,12 +948,12 @@
       </div>
     </div>
     <div class="hero-badges">
-      <span class="badge"> Active Development   <span class="live-dot" aria-hidden="true"></span></span>
-      <span class="badge"><span class="b-label">version</span> <span data-lib-version>0.8.8</span></span>
-      <span class="badge"><span class="b-label">python</span> 3.11 · 3.12 · 3.13</span>
-      <span class="badge"><span class="b-label">license</span> CeCILL-2.1</span>
-      <span class="badge"><span class="b-label">pypi</span> nirs4all</span>
-      <span class="badge"><span class="b-label">status</span> Beta</span>
+      <a href="https://github.com/GBeurier/nirs4all" target="_blank" class="badge"> Active Development   <span class="live-dot" aria-hidden="true"></span></a>
+      <a href="https://pypi.org/project/nirs4all" target="_blank" class="badge"><span class="b-label">version</span> <span data-lib-version>0.8.8</span></a>
+      <a href="https://www.python.org/downloads/" target="_blank" class="badge"><span class="b-label">python</span> 3.11 · 3.12 · 3.13</a>
+      <a href="https://cecill.info/licences/Licence_CeCILL_V2.1-en.html" target="_blank" class="badge"><span class="b-label">license</span> CeCILL-2.1</a>
+      <a href="https://pypi.org/project/nirs4all" target="_blank" class="badge"><span class="b-label">pypi</span> nirs4all</a>
+      <a href="https://github.com/GBeurier/nirs4all" target="_blank" class="badge"><span class="b-label">status</span> Beta</a>
     </div>
   </div>
 </section>
