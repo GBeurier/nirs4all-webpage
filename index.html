@@ -259,8 +259,9 @@
     }
     .wave-connector {
       fill: none;
-      stroke-dasharray: 3 5;
+      stroke-dasharray: 1.5 4;
       stroke-linecap: round;
+      mix-blend-mode: multiply;
     }
 
     /* Wavelength scale strip — fixed at viewport bottom while hero is in view */
@@ -1703,41 +1704,61 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
         dots.push({ el, waveIdx, x, born: now, lifetime: DOT_LIFETIME + Math.random() * 800, connectors: [] });
       };
 
+      // Connectors pair dots that live on DIFFERENT waves, so the dotted
+      // traces read as cross-spectral correlations rather than redundant
+      // echoes of a single curve. Each dot picks its nearest cross-wave
+      // partner within a proximity window, links are de-duplicated, and
+      // the path is a gentle quadratic bezier that bows away from the
+      // midpoint — more graceful than a raw straight line.
+      const MAX_CONN_DX = 220;  // SVG-space x-distance window
       const updateConnectors = (now) => {
-        const byWave = [[], [], []];
-        dots.forEach(d => byWave[d.waveIdx].push(d));
-        byWave.forEach((group, wi) => {
-          group.sort((a, b) => a.x - b.x);
-          group.forEach(d => {
-            d.connectors.forEach(c => c.remove());
-            d.connectors = [];
-          });
-          for (let i = 0; i < group.length - 1; i++) {
-            const a = group[i], b = group[i + 1];
-            const opA = parseFloat(a.el.getAttribute('opacity') || '0');
-            const opB = parseFloat(b.el.getAttribute('opacity') || '0');
-            const op = Math.min(opA, opB) * 0.65;
-            if (op < 0.02) continue;
-            const wave = waves[wi];
-            const ax = a.x, bx = b.x;
-            let path = '';
-            const segStep = Math.max(8, (bx - ax) / 20);
-            for (let sx = ax; sx <= bx; sx += segStep) {
-              const sy = getY(wave, sx, now);
-              path += (sx === ax ? 'M' : 'L') + sx.toFixed(1) + ',' + sy.toFixed(1);
-            }
-            const lastY = getY(wave, bx, now);
-            path += 'L' + bx.toFixed(1) + ',' + lastY.toFixed(1);
-            const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            line.setAttribute('d', path);
-            line.setAttribute('stroke', wave.color);
-            line.setAttribute('stroke-width', '0.7');
-            line.setAttribute('opacity', op.toFixed(3));
-            line.classList.add('wave-connector');
-            dotsGroup.insertBefore(line, dotsGroup.firstChild);
-            a.connectors.push(line);
-          }
+        dots.forEach(d => {
+          d.connectors.forEach(c => c.remove());
+          d.connectors = [];
         });
+
+        const positions = dots.map(d => ({
+          d,
+          op: parseFloat(d.el.getAttribute('opacity') || '0'),
+          y: getY(waves[d.waveIdx], d.x, now),
+        }));
+
+        const seen = new Set();
+        for (let i = 0; i < positions.length; i++) {
+          const a = positions[i];
+          if (a.op < 0.18) continue;
+          let best = null;
+          for (let j = 0; j < positions.length; j++) {
+            if (i === j) continue;
+            const b = positions[j];
+            if (b.d.waveIdx === a.d.waveIdx) continue;
+            if (b.op < 0.18) continue;
+            const dx = Math.abs(a.d.x - b.d.x);
+            if (dx > MAX_CONN_DX) continue;
+            if (!best || dx < best.dx) best = { b, j, dx };
+          }
+          if (!best) continue;
+          const key = i < best.j ? i + ':' + best.j : best.j + ':' + i;
+          if (seen.has(key)) continue;
+          seen.add(key);
+
+          const b = best.b;
+          const proximity = 1 - best.dx / MAX_CONN_DX;
+          const op = Math.min(a.op, b.op) * 0.55 * (0.35 + 0.65 * proximity);
+          if (op < 0.03) continue;
+
+          const ax = a.d.x, ay = a.y, bx = b.d.x, by = b.y;
+          const path = 'M' + ax.toFixed(1) + ',' + ay.toFixed(1)
+                     + ' L' + bx.toFixed(1) + ',' + by.toFixed(1);
+          const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          line.setAttribute('d', path);
+          line.setAttribute('stroke', waves[a.d.waveIdx].color);
+          line.setAttribute('stroke-width', '0.75');
+          line.setAttribute('opacity', op.toFixed(3));
+          line.classList.add('wave-connector');
+          dotsGroup.insertBefore(line, dotsGroup.firstChild);
+          a.d.connectors.push(line);
+        }
       };
 
       const updateDots = (now) => {
