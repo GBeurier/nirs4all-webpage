@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://nirs4all.org/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nirs4all.org/assets/nirs4all_logo.png</image:loc>
+      <image:title>nirs4all logo</image:title>
+      <image:caption>nirs4all open-source NIR spectroscopy platform</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nirs4all.org/assets/playground-page.png</image:loc>
+      <image:title>nirs4all Studio Playground</image:title>
+      <image:caption>Interactive spectral exploration in nirs4all Studio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nirs4all.org/assets/results-page.png</image:loc>
+      <image:title>nirs4all results page</image:title>
+      <image:caption>Model ranking and evaluation in nirs4all Studio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nirs4all.org/assets/pipeline-page.png</image:loc>
+      <image:title>nirs4all pipeline builder</image:title>
+      <image:caption>Pipeline configuration and orchestration in nirs4all Studio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nirs4all.org/assets/inspector-after-refresh.jpg</image:loc>
+      <image:title>nirs4all inspector</image:title>
+      <image:caption>Prediction inspection and sample-level analysis in nirs4all Studio</image:caption>
+    </image:image>
+  </url>
+</urlset>
