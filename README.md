@@ -1,6 +1,6 @@
 # nirs4all Landing Page
 
-Official landing page for [nirs4all](https://github.com/GBeurier/nirs4all) and [nirs4all Studio](https://github.com/GBeurier/nirs4all-webapp).
+Official landing page for [nirs4all](https://github.com/GBeurier/nirs4all) and [nirs4all Studio](https://github.com/GBeurier/nirs4all-studio).
 
 Visible at [nirs4all.org](https://nirs4all.org)
 
