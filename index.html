@@ -61,7 +61,16 @@
             "https://github.com/GBeurier/nirs4all",
             "https://github.com/GBeurier/nirs4all-studio",
             "https://nirs4all.readthedocs.io",
-            "https://pypi.org/project/nirs4all/"
+            "https://pypi.org/project/nirs4all/",
+            "https://github.com/GBeurier/nirs4all-ecosystem",
+            "https://github.com/GBeurier/nirs4all-methods",
+            "https://gbeurier.github.io/nirs4all-methods/",
+            "https://github.com/GBeurier/nirs4all-aom",
+            "https://pypi.org/project/nirs4all-aom/",
+            "https://github.com/GBeurier/nirs4all-formats",
+            "https://github.com/GBeurier/nirs4all-io",
+            "https://github.com/GBeurier/dag-ml",
+            "https://github.com/GBeurier/dag-ml-data"
           ],
           "contactPoint": {
             "@type": "ContactPoint",
@@ -679,6 +688,8 @@
     .pill-cyan:hover { background: rgba(6,182,212,.1); border-color: var(--cyan); color: var(--cyan-d); }
     .pill-indigo { color: var(--indigo-d); border-color: rgba(79,70,229,.2); background: rgba(79,70,229,.05); }
     .pill-indigo:hover { background: rgba(79,70,229,.1); border-color: var(--indigo); color: var(--indigo-d); }
+    .pill-amber { color: var(--amber); border-color: rgba(217,119,6,.22); background: rgba(217,119,6,.05); }
+    .pill-amber:hover { background: rgba(217,119,6,.1); border-color: var(--amber); color: var(--amber); }
 
     /* ── Features ───────────────────────────────────────────────── */
     .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
@@ -958,6 +969,75 @@
     .link-card h4 { font-size: .95rem; font-weight: 700; color: var(--text); }
     .link-card p { color: var(--text-2); font-size: .82rem; line-height: 1.6; }
 
+    /* ── Ecosystem ────────────────────────────────────────────────── */
+    .eco-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+    .eco-card {
+      --eco-accent: var(--teal);
+      --eco-glow: rgba(13,148,136,0.5);
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      transition: transform .25s, border-color .25s, box-shadow .25s, background .25s;
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    }
+    .eco-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--eco-accent); opacity: 0; transition: opacity .3s;
+    }
+    .eco-card:hover {
+      transform: translateY(-3px); border-color: var(--eco-accent);
+      box-shadow: var(--shadow-lg); background: #fff;
+    }
+    .eco-card:hover::before { opacity: .9; }
+    .eco-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .eco-logo {
+      flex-shrink: 0; width: 50px; height: 50px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: .8rem; font-weight: 600;
+      color: #fff; background: var(--eco-accent);
+      box-shadow: 0 8px 20px -8px var(--eco-glow);
+      overflow: hidden; letter-spacing: -.01em;
+    }
+    .eco-logo.has-logo { background: #fff; box-shadow: var(--shadow); }
+    .eco-logo img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+    .eco-titles { min-width: 0; }
+    .eco-cat {
+      font-family: var(--mono); font-size: .64rem; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--eco-accent); margin-bottom: 4px;
+    }
+    .eco-name {
+      font-family: var(--display); font-size: 1.14rem; font-weight: 600;
+      letter-spacing: -.01em; line-height: 1.2;
+      display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
+    }
+    .eco-lang {
+      font-family: var(--mono); font-size: .66rem; font-weight: 500;
+      color: var(--text-3); background: var(--bg-alt);
+      border: 1px solid var(--border); border-radius: 5px; padding: 1px 7px;
+    }
+    .eco-card p { color: var(--text-2); font-size: .9rem; line-height: 1.72; margin-bottom: 18px; }
+    .eco-links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; align-items: center; }
+    .eco-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 13px; border-radius: 100px;
+      font-size: .74rem; font-weight: 600; cursor: default;
+      color: var(--text-3); background: var(--paper-2);
+      border: 1px dashed var(--border-warm); font-family: var(--mono);
+    }
+    .eco-card.cat-engine { --eco-accent: var(--indigo); --eco-glow: rgba(79,70,229,0.45); }
+    .eco-card.cat-data   { --eco-accent: var(--cyan-d); --eco-glow: rgba(6,182,212,0.45); }
+    .eco-card.cat-dag    { --eco-accent: var(--amber);  --eco-glow: rgba(217,119,6,0.42); }
+    .eco-card.cat-soon   { --eco-accent: var(--text-3); --eco-glow: rgba(100,116,139,0.35); }
+    .eco-foot { text-align: center; margin-top: 44px; }
+
     /* ── Footer ───────────────────────────────────────────────────── */
     footer {
       background: linear-gradient(180deg, #080d1a 0%, #0a1118 100%);
@@ -1031,7 +1111,7 @@
       .hero-inst-sep { display: none; }
       .hero-content { padding: 100px 0 80px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
-      .features-grid { grid-template-columns: 1fr; }
+      .features-grid, .eco-grid { grid-template-columns: 1fr; }
       .screenshot-frame::before { display: none; }
       .screenshot-frame img { margin-top: 0; }
     }
@@ -1051,6 +1131,7 @@
       <a href="#screenshots">Studio</a>
       <a href="#features">Features</a>
       <a href="#applications">Applications</a>
+      <a href="#ecosystem">Ecosystem</a>
       <a href="#install">Install</a>
       <a href="#team">Team</a>
       <a href="#faq">FAQ</a>
@@ -1418,6 +1499,163 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Ecosystem ───────────────────────────────────────────────── -->
+<section id="ecosystem" class="section section-aurora">
+  <div class="container">
+    <div class="eyebrow-wrap fade-in"><span class="eyebrow">Open-source stack</span></div>
+    <h2 class="section-title fade-in">One growing <em>ecosystem</em></h2>
+    <p class="section-sub fade-in">A family of focused, interoperable open-source projects &mdash; from the Python library and the no-code Studio to portable chemometric engines, Rust file readers, and a leakage-safe DAG execution core. The nirs4all and dag-ml stack is expanding fast.</p>
+    <div class="eco-grid">
+
+      <!-- nirs4all · Python library -->
+      <div class="eco-card cat-core fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="nirs4all" aria-hidden="true">n4</span>
+          <div class="eco-titles">
+            <div class="eco-cat">Python library</div>
+            <div class="eco-name">nirs4all <span class="eco-lang">Python</span></div>
+          </div>
+        </div>
+        <p>The Python core of the ecosystem: declarative NIRS pipelines with 30+ spectral preprocessings, 15+ advanced PLS models, and a unified API over scikit-learn, TensorFlow, PyTorch and JAX. Train, explain, and export portable <code style="color:var(--cyan-d);background:var(--bg-alt);padding:1px 5px;border-radius:4px">.n4a</code> model bundles.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/nirs4all" target="_blank" class="pill pill-teal"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <a href="https://nirs4all.readthedocs.io" target="_blank" class="pill pill-teal">Docs</a>
+          <a href="https://pypi.org/project/nirs4all" target="_blank" class="pill pill-teal">PyPI</a>
+        </div>
+      </div>
+
+      <!-- nirs4all Studio · Desktop & web app -->
+      <div class="eco-card cat-core fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="nirs4all-studio" aria-hidden="true">n4s</span>
+          <div class="eco-titles">
+            <div class="eco-cat">Desktop &amp; web app</div>
+            <div class="eco-name">nirs4all Studio <span class="eco-lang">React &middot; Electron</span></div>
+          </div>
+        </div>
+        <p>The no-code application built on the library: a drag-and-drop pipeline builder, real-time spectral visualization, experiment tracking, and SHAP analysis &mdash; packaged with Electron for Windows, Linux and macOS, and runnable on the web.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/nirs4all-studio" target="_blank" class="pill pill-teal"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <a href="https://github.com/GBeurier/nirs4all-studio/releases/latest" target="_blank" class="pill pill-teal">Releases</a>
+        </div>
+      </div>
+
+      <!-- nirs4all-methods · PLS engine -->
+      <div class="eco-card cat-engine fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="nirs4all-methods" aria-hidden="true">n4m</span>
+          <div class="eco-titles">
+            <div class="eco-cat">PLS engine</div>
+            <div class="eco-name">nirs4all-methods <span class="eco-lang">C++ &middot; C ABI</span></div>
+          </div>
+        </div>
+        <p>A portable Partial Least Squares engine in C++17 with a stable C ABI (<code style="color:var(--indigo-d);background:var(--bg-alt);padding:1px 5px;border-radius:4px">libn4m</code>) and first-class bindings for Python, R, MATLAB/Octave, JavaScript/WebAssembly and Android &mdash; one numerical core, parity-checked across every language.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/nirs4all-methods" target="_blank" class="pill pill-indigo"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" class="pill pill-indigo">Website</a>
+        </div>
+      </div>
+
+      <!-- nirs4all-aom · Adaptive models -->
+      <div class="eco-card cat-engine fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="nirs4all-aom" aria-hidden="true">aom</span>
+          <div class="eco-titles">
+            <div class="eco-cat">Adaptive models</div>
+            <div class="eco-name">nirs4all-aom <span class="eco-lang">Python &middot; sklearn</span></div>
+          </div>
+        </div>
+        <p>Operator-adaptive calibration models &mdash; AOM-PLS, POP-PLS and AOM-Ridge &mdash; that fold spectral preprocessing directly into the model and replace external preprocessing grid-search. scikit-learn compatible; companion code for the AOM-PLS paper.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/nirs4all-aom" target="_blank" class="pill pill-indigo"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <a href="https://pypi.org/project/nirs4all-aom" target="_blank" class="pill pill-indigo">PyPI</a>
+        </div>
+      </div>
+
+      <!-- nirs4all-formats · File readers -->
+      <div class="eco-card cat-data fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="nirs4all-formats" aria-hidden="true">fmt</span>
+          <div class="eco-titles">
+            <div class="eco-cat">File readers</div>
+            <div class="eco-name">nirs4all-formats <span class="eco-lang">Rust</span></div>
+          </div>
+        </div>
+        <p>Rust-first, low-level readers for 40+ NIRS &amp; spectroscopy file formats. Content-sniffed, lossless, provenance-tracked records with Python, R, WebAssembly and C bindings &mdash; the messy vendor-file zoo turned into one clean data model.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/nirs4all-formats" target="_blank" class="pill pill-cyan"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <span class="eco-status">Alpha</span>
+        </div>
+      </div>
+
+      <!-- nirs4all-io · Dataset bridge -->
+      <div class="eco-card cat-data fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="nirs4all-io" aria-hidden="true">io</span>
+          <div class="eco-titles">
+            <div class="eco-cat">Dataset bridge</div>
+            <div class="eco-name">nirs4all-io <span class="eco-lang">Python</span></div>
+          </div>
+        </div>
+        <p>A dataset-assembly bridge: turn any input &mdash; a folder, a glob, vendor spectra plus a reference table, or a config &mdash; into a pipeline-ready dataset through resolve &rarr; infer &rarr; configure &rarr; materialize, with a score-based inference engine. Built on nirs4all-formats.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/nirs4all-io" target="_blank" class="pill pill-cyan"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+        </div>
+      </div>
+
+      <!-- dag-ml · Execution core -->
+      <div class="eco-card cat-dag fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="dag-ml" aria-hidden="true">dag</span>
+          <div class="eco-titles">
+            <div class="eco-cat">Execution core</div>
+            <div class="eco-name">dag-ml <span class="eco-lang">Rust &middot; C ABI</span></div>
+          </div>
+        </div>
+        <p>A leakage-safe, in-process DAG execution core. It owns the graph, phases, folds, out-of-fold joins, lineage, caching and deterministic RNG &mdash; exposed through a C ABI so any host language can drive reproducible ML pipelines.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/dag-ml" target="_blank" class="pill pill-amber"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+        </div>
+      </div>
+
+      <!-- dag-ml-data · Data contracts -->
+      <div class="eco-card cat-dag fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="dag-ml-data" aria-hidden="true">dat</span>
+          <div class="eco-titles">
+            <div class="eco-cat">Data contracts</div>
+            <div class="eco-name">dag-ml-data <span class="eco-lang">Rust &middot; C ABI</span></div>
+          </div>
+        </div>
+        <p>The data-contract and planning layer beneath dag-ml: typed, sample-aligned, multi-source data views, representation adapters, data plans, and schema fingerprints &mdash; the foundation that keeps pipelines reproducible.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/dag-ml-data" target="_blank" class="pill pill-amber"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+        </div>
+      </div>
+
+      <!-- nirs4all-arena · New -->
+      <div class="eco-card cat-soon fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="nirs4all-arena" aria-hidden="true">ar</span>
+          <div class="eco-titles">
+            <div class="eco-cat">New</div>
+            <div class="eco-name">nirs4all-arena</div>
+          </div>
+        </div>
+        <p>A new public space in the nirs4all ecosystem &mdash; currently taking shape. Star the repository to follow what lands here.</p>
+        <div class="eco-links">
+          <a href="https://github.com/GBeurier/nirs4all-arena" target="_blank" class="pill pill-teal"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <span class="eco-status">Coming soon</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="eco-foot fade-in">
+      <a href="https://github.com/GBeurier/nirs4all-ecosystem" target="_blank" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Browse all repositories</a>
     </div>
   </div>
 </section>
@@ -2068,6 +2306,34 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
     }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
     wlObs.observe(heroEl);
   }
+
+  // ── Ecosystem logos ────────────────────────────────────────
+  // Drop a logo into assets/ecosystem/<repo>.svg (or .png) and set its path
+  // below; an empty string keeps the lettermark fallback. No network request
+  // is made while a path is empty, so unconfigured logos cost nothing.
+  const ECOSYSTEM_LOGOS = {
+    "nirs4all": "",
+    "nirs4all-studio": "",
+    "nirs4all-methods": "",
+    "nirs4all-aom": "",
+    "nirs4all-formats": "",
+    "nirs4all-io": "",
+    "dag-ml": "",
+    "dag-ml-data": "",
+    "nirs4all-arena": "",
+  };
+  document.querySelectorAll('[data-eco-logo]').forEach(el => {
+    const src = ECOSYSTEM_LOGOS[el.dataset.ecoLogo];
+    if (!src) return;
+    const img = new Image();
+    img.alt = '';
+    img.addEventListener('load', () => {
+      el.textContent = '';
+      el.classList.add('has-logo');
+      el.appendChild(img);
+    });
+    img.src = src;
+  });
 </script>
 </body>
 </html>
