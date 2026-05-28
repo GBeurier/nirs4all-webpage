@@ -1,0 +1,5 @@
+# Logo source files (PowerPoint originals) — not part of the deployed site
+*.pptx
+
+# WSL/Windows file metadata streams
+*:Zone.Identifier
