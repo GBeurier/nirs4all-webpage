@@ -1180,6 +1180,35 @@
       border: 1px solid var(--border); border-radius: 100px;
       padding: 3px 9px; white-space: nowrap; letter-spacing: -.01em;
     }
+    /* Per-language build downloads (multi-binding packages) */
+    .eco-dl {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 7px;
+      margin: 2px 0 18px;
+    }
+    .eco-dl-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--mono); font-size: .62rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--text-3);
+      margin-right: 1px;
+    }
+    .eco-dl-label svg { width: 13px; height: 13px; }
+    .lang-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 3px 10px 3px 3px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--surface);
+      transition: transform .18s, border-color .18s, box-shadow .18s;
+    }
+    .lang-badge:hover {
+      border-color: var(--eco-accent); transform: translateY(-1px); box-shadow: var(--shadow);
+    }
+    .lang-mark {
+      width: 21px; height: 21px; border-radius: 6px; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-weight: 700; color: #fff;
+      font-size: .6rem; letter-spacing: -.02em;
+    }
+    .lang-badge > span:last-child { font-size: .72rem; font-weight: 600; color: var(--text-2); }
+    .lang-badge:hover > span:last-child { color: var(--text); }
     .eco-card.cat-engine { --eco-accent: var(--indigo); --eco-glow: rgba(79,70,229,0.45); }
     .eco-card.cat-data   { --eco-accent: var(--cyan-d); --eco-glow: rgba(6,182,212,0.45); }
     .eco-card.cat-dag    { --eco-accent: var(--amber);  --eco-glow: rgba(217,119,6,0.42); }
@@ -1744,6 +1773,14 @@
           <span class="eco-ver">v0.99.0</span>
         </div>
         <p>A portable Partial Least Squares engine in C++17 with a stable C ABI (<code style="color:var(--indigo-d);background:var(--bg-alt);padding:1px 5px;border-radius:4px">libn4m</code>) and first-class bindings for Python, R, MATLAB/Octave, JavaScript/WebAssembly and Android &mdash; one numerical core, parity-checked across every language.</p>
+        <div class="eco-dl">
+          <span class="eco-dl-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Builds</span>
+          <a href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the Python build (wheels)" aria-label="Download the Python build"><span class="lang-mark" style="background:#3776ab">Py</span><span>Python</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the R build (CRAN tarball)" aria-label="Download the R build"><span class="lang-mark" style="background:#276dc3">R</span><span>R</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="MATLAB / Octave bindings (in the release source)" aria-label="Download the MATLAB / Octave build"><span class="lang-mark" style="background:#d9531e">M</span><span>MATLAB</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the JavaScript / WebAssembly build" aria-label="Download the JavaScript / WebAssembly build"><span class="lang-mark" style="background:#654ff0">Wa</span><span>JS&nbsp;/&nbsp;WASM</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the C / C++ build (libn4m)" aria-label="Download the C / C++ build"><span class="lang-mark" style="background:#00599c;font-size:.5rem">C++</span><span>C&nbsp;/&nbsp;C++</span></a>
+        </div>
         <div class="eco-links">
           <a href="https://github.com/GBeurier/nirs4all-methods" target="_blank" class="pill pill-indigo"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
           <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" class="pill pill-indigo">Website</a>
@@ -1778,6 +1815,14 @@
           <span class="eco-ver">v0.1.0-alpha</span>
         </div>
         <p>Rust-first, low-level readers for ~58 NIRS &amp; spectroscopy format families. Content-sniffed, lossless, provenance-tracked records with Python, R, WebAssembly and C bindings &mdash; the messy vendor-file zoo turned into one clean data model. Now published on PyPI and crates.io.</p>
+        <div class="eco-dl">
+          <span class="eco-dl-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Builds</span>
+          <a href="https://github.com/GBeurier/nirs4all-formats/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the Python build (wheels)" aria-label="Download the Python build"><span class="lang-mark" style="background:#3776ab">Py</span><span>Python</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-formats/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the Rust crate build" aria-label="Download the Rust build"><span class="lang-mark" style="background:#b7410e">Rs</span><span>Rust</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-formats/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the R build" aria-label="Download the R build"><span class="lang-mark" style="background:#276dc3">R</span><span>R</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-formats/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the JavaScript / WebAssembly build" aria-label="Download the JavaScript / WebAssembly build"><span class="lang-mark" style="background:#654ff0">Wa</span><span>JS&nbsp;/&nbsp;WASM</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-formats/releases/latest" target="_blank" rel="noopener" class="lang-badge" title="Download the C build (header + static lib)" aria-label="Download the C build"><span class="lang-mark" style="background:#00599c">C</span><span>C</span></a>
+        </div>
         <div class="eco-links">
           <a href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" class="pill pill-teal"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><path d="m10 13 3 2-3 2z" fill="currentColor"/></svg>Live demo</a>
           <a href="https://github.com/GBeurier/nirs4all-formats" target="_blank" class="pill pill-cyan"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
