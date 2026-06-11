@@ -567,14 +567,14 @@
     }
 
     .hero-content {
-      position: relative; z-index: 20; text-align: center; padding: 120px 0 110px;
+      position: relative; z-index: 20; text-align: center; padding: 96px 0 64px;
       isolation: isolate;
     }
     .hero-content > * { position: relative; z-index: 1; }
     /* Hero quick-access strip — packages with live hosted sites */
     .hero-sites {
       display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-      gap: 8px; margin-bottom: 30px;
+      gap: 8px; margin: 4px 0 22px;
     }
     .hero-sites-label {
       display: inline-flex; align-items: center; gap: 8px;
@@ -616,7 +616,7 @@
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
     .hero-logo {
       width: clamp(170px, 26vw, 260px); height: auto;
-      margin: 0 auto 20px; display: block;
+      margin: 0 auto 18px; display: block;
       filter: drop-shadow(0 12px 30px rgba(13,94,88,0.18));
     }
     .hero-tagline {
@@ -638,7 +638,7 @@
     }
     .hero-institutions {
       display: flex; align-items: center; justify-content: center;
-      gap: 28px; margin: 34px 0 28px; flex-wrap: wrap;
+      gap: 24px; margin: 20px 0 20px; flex-wrap: wrap;
     }
     .hero-inst-link,
     .hero-team-link {
@@ -665,7 +665,7 @@
     .hero-team strong { color: var(--text); font-weight: 700; font-size: 1.05rem; }
     .hero-sub {
       font-size: clamp(.98rem, 2.2vw, 1.12rem); color: var(--text-2);
-      max-width: 620px; margin: 0 auto 36px; line-height: 1.75;
+      max-width: 620px; margin: 0 auto 22px; line-height: 1.7;
     }
     .hero-contact {
       display: inline-flex; align-items: center; gap: 10px;
@@ -691,10 +691,11 @@
     .hero-contact a:hover {
       color: var(--cyan-d);
     }
+    .hero-institutions .hero-contact { margin: 0; }
     .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 20px; position: relative; z-index: 12; }
     .hero-download {
       display: flex; align-items: center; justify-content: center;
-      gap: 10px; margin-bottom: 44px; flex-wrap: wrap;
+      gap: 10px; margin-bottom: 22px; flex-wrap: wrap;
       position: relative; z-index: 12;
     }
     .btn-download {
@@ -1358,23 +1359,10 @@
   </div>
 
   <div class="container hero-content fade-in">
-    <div class="hero-sites">
-      <span class="hero-sites-label">Try it live</span>
-      <a href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-formats <span>demo</span></a>
-      <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-io <span>demo</span></a>
-      <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" rel="noopener" class="hero-site-chip">studio-lite <span>WASM</span></a>
-      <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-methods <span>site</span></a>
-      <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-datasets <span>site</span></a>
-    </div>
     <img src="assets/nirs4all_logo.png" alt="nirs4all" class="hero-logo" />
     <!-- <div class="hero-kicker">Near-Infrared Spectroscopy · Open Source</div> -->
-    <br><br>
     <h1 class="hero-tagline">Open spectroscopy <em>for everyone</em></h1>
     <p class="hero-sub">From raw spectra to deployed models &mdash; a comprehensive Python framework and desktop application for Near-Infrared Spectroscopy, built by researchers, shared with the world.</p>
-    <div class="hero-contact">
-      <span>Contact</span>
-      <a href="mailto:nirs4all@cirad.fr">nirs4all@cirad.fr</a>
-    </div>
     <div class="hero-institutions">
       <a href="https://www.cirad.fr/en" target="_blank" class="hero-inst-link">
         <img src="assets/institutions/logo-cirad-en.jpg" alt="CIRAD" class="hero-inst-logo" />
@@ -1387,6 +1375,11 @@
       <a href="https://umr-agap.cirad.fr/recherches/equipes-scientifiques/phenotypage-et-modelisation-des-plantes-dans-leur-environnement-agro-climatique/contexte-et-enjeux" class="hero-team-link">
         <div class="hero-team"><strong>PHENOMEN Team</strong><br>UMR AGAP Institut &middot; CIRAD</div>
       </a>
+      <div class="hero-inst-sep"></div>
+      <div class="hero-contact">
+        <span>Contact</span>
+        <a href="mailto:nirs4all@cirad.fr">nirs4all@cirad.fr</a>
+      </div>
     </div>
     <div class="hero-ctas">
       <button class="btn-pip" id="copy-pip" title="Click to copy">
@@ -1425,6 +1418,14 @@
           Linux
         </a>
       </div>
+    </div>
+    <div class="hero-sites">
+      <span class="hero-sites-label">Explore it live</span>
+      <a href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-formats <span>demo</span></a>
+      <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-io <span>demo</span></a>
+      <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" rel="noopener" class="hero-site-chip">studio-lite <span>WASM</span></a>
+      <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-methods <span>site</span></a>
+      <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-datasets <span>site</span></a>
     </div>
     <div class="hero-badges">
       <a href="https://github.com/GBeurier/nirs4all" target="_blank" class="badge"> Active Development   <span class="live-dot" aria-hidden="true"></span></a>
