@@ -568,7 +568,7 @@
     }
 
     .hero-content {
-      position: relative; z-index: 20; text-align: center; padding: 96px 0 64px;
+      position: relative; z-index: 20; text-align: center; padding: 64px 0 64px;
       isolation: isolate;
     }
     .hero-content > * { position: relative; z-index: 1; }
@@ -607,7 +607,7 @@
     }
     .hero-institutions {
       display: flex; align-items: center; justify-content: center;
-      gap: 24px; margin: 20px 0 20px; flex-wrap: wrap;
+      gap: 24px; margin: 42px 0 38px; flex-wrap: wrap;
     }
     .hero-inst-link,
     .hero-team-link {
@@ -634,7 +634,7 @@
     .hero-team strong { color: var(--text); font-weight: 700; font-size: 1.05rem; }
     .hero-sub {
       font-size: clamp(.98rem, 2.2vw, 1.12rem); color: var(--text-2);
-      max-width: 620px; margin: 0 auto 22px; line-height: 1.7;
+      max-width: 620px; margin: 0 auto; line-height: 1.7;
     }
     .hero-contact {
       display: inline-flex; align-items: center; gap: 10px;
@@ -1785,79 +1785,6 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
     <h2 class="section-title fade-in">One growing <em>ecosystem</em></h2>
     <p class="section-sub fade-in">At the center sits <strong>nirs4all</strong>, the Python library. Around it: the no-code <strong>Studio</strong> app, in-browser <strong>demos</strong>, file &amp; dataset tools, portable <strong>engines</strong>, a leakage-safe execution core &mdash; and an ongoing <strong>port to every language</strong>. Explore the live demos, or install any package below.</p>
 
-    <!-- Ecosystem HUD banner -->
-    <div class="eco-hud fade-in">
-      <div class="hud-bar">
-        <span class="hud-corner"></span>
-        <span class="hud-label">Ecosystem<i>_</i></span>
-        <span class="hud-rule"></span>
-        <span class="hud-meta">12 repos &middot; open&nbsp;source</span>
-        <span class="hud-dot"></span>
-      </div>
-      <div class="hud-body">
-        <div class="hud-col">
-          <div class="hud-h">Explore <small>run it in your browser</small></div>
-          <div class="hud-links">
-            <a href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-formats <span class="k">demo</span></a>
-            <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-io <span class="k">demo</span></a>
-            <a href="https://gbeurier.github.io/nirs4all-web/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-web <span class="k">WASM</span></a>
-            <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-methods <span class="k">site</span></a>
-            <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-datasets <span class="k">site</span></a>
-          </div>
-        </div>
-        <div class="hud-col hud-install">
-          <div class="hud-h">Install <small>pick a package manager</small></div>
-          <div class="hud-tabs">
-            <button class="hud-tab active" data-tab="pypi">PyPI</button>
-            <button class="hud-tab" data-tab="runiverse">R&middot;universe</button>
-            <button class="hud-tab" data-tab="cran">CRAN <span class="s">soon</span></button>
-            <button class="hud-tab" data-tab="octave">Octave / MATLAB</button>
-            <button class="hud-tab" data-tab="npm">npm <span class="s">soon</span></button>
-            <button class="hud-tab" data-tab="dl">&#8595; Releases</button>
-          </div>
-          <div class="hud-panels">
-            <div class="hud-panel active" data-panel="pypi">
-              <div class="hud-code"><button class="hud-copy" data-copy="pip install nirs4all&#10;pip install nirs4all-methods&#10;pip install pls4all&#10;pip install nirs4all-aom">copy</button><span class="cm"># the library, the PLS engine &amp; the models</span>
-pip install <span class="pk">nirs4all</span>
-pip install <span class="pk">nirs4all-methods</span>
-pip install <span class="pk">pls4all</span>
-pip install <span class="pk">nirs4all-aom</span></div>
-              <div class="hud-note">formats &amp; io wheels &rarr; <b>&#8595; Releases</b> tab (on PyPI soon)</div>
-            </div>
-            <div class="hud-panel" data-panel="runiverse">
-              <div class="hud-code"><button class="hud-copy" data-copy='install.packages(c("n4m", "pls4all"), repos = "https://gbeurier.r-universe.dev")'>copy</button><span class="cm"># R &mdash; the PLS engine, auto-built from source</span>
-<span class="fn">install.packages</span>(
-  <span class="pk">c("n4m", "pls4all")</span>,
-  repos = <span class="pk">"https://gbeurier.r-universe.dev"</span>
-)</div>
-              <div class="hud-note">Rebuilt on <b>every release</b> &mdash; no compiler needed.</div>
-            </div>
-            <div class="hud-panel" data-panel="cran">
-              <div class="hud-soon"><b>CRAN &mdash; coming soon.</b><br>n4m &amp; pls4all are heading to CRAN. Until then, the <b>R&middot;universe</b> tab installs the exact same packages.</div>
-            </div>
-            <div class="hud-panel" data-panel="octave">
-              <div class="hud-dlrow">
-                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>Octave + MATLAB</b><span class="meta">methods-matlab-octave.zip</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
-                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>MATLAB only</b><span class="meta">methods-matlab.zip</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
-              </div>
-              <div class="hud-note">One <b>+n4m</b> binding for both runtimes &mdash; unzip, <b>addpath</b>, go.</div>
-            </div>
-            <div class="hud-panel" data-panel="npm">
-              <div class="hud-soon"><b>npm &mdash; coming soon.</b><br>The JS / WASM package will ship from <b>nirs4all-lite</b>; the browser client is available as <b>nirs4all-web</b> (Explore).</div>
-            </div>
-            <div class="hud-panel" data-panel="dl">
-              <div class="hud-dlrow">
-                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-formats/releases/latest" target="_blank" rel="noopener"><b>nirs4all-formats</b><span class="meta">v0.1.0 &middot; wheels &middot; R &middot; C-API</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
-                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>nirs4all-methods</b><span class="meta">v0.99.0 &middot; R &middot; MATLAB/Octave &middot; src</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
-                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>pls4all</b><span class="meta">v0.99.0 &middot; R tarball</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
-              </div>
-              <div class="hud-note">nirs4all-io packages &mdash; <b>coming soon</b>.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="eco-grid">
 
       <!-- nirs4all · Python library -->
@@ -2087,6 +2014,79 @@ pip install <span class="pk">nirs4all-aom</span></div>
 
 
     </div>
+    <!-- Ecosystem HUD banner -->
+    <div class="eco-hud fade-in">
+      <div class="hud-bar">
+        <span class="hud-corner"></span>
+        <span class="hud-label">Ecosystem<i>_</i></span>
+        <span class="hud-rule"></span>
+        <span class="hud-meta">12 repos &middot; open&nbsp;source</span>
+        <span class="hud-dot"></span>
+      </div>
+      <div class="hud-body">
+        <div class="hud-col">
+          <div class="hud-h">Explore <small>run it in your browser</small></div>
+          <div class="hud-links">
+            <a href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-formats <span class="k">demo</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-io <span class="k">demo</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-web/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-web <span class="k">WASM</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-methods <span class="k">site</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-datasets <span class="k">site</span></a>
+          </div>
+        </div>
+        <div class="hud-col hud-install">
+          <div class="hud-h">Install <small>pick a package manager</small></div>
+          <div class="hud-tabs">
+            <button class="hud-tab active" data-tab="pypi">PyPI</button>
+            <button class="hud-tab" data-tab="runiverse">R&middot;universe</button>
+            <button class="hud-tab" data-tab="cran">CRAN <span class="s">soon</span></button>
+            <button class="hud-tab" data-tab="octave">Octave / MATLAB</button>
+            <button class="hud-tab" data-tab="npm">npm <span class="s">soon</span></button>
+            <button class="hud-tab" data-tab="dl">&#8595; Releases</button>
+          </div>
+          <div class="hud-panels">
+            <div class="hud-panel active" data-panel="pypi">
+              <div class="hud-code"><button class="hud-copy" data-copy="pip install nirs4all&#10;pip install nirs4all-methods&#10;pip install pls4all&#10;pip install nirs4all-aom">copy</button><span class="cm"># the library, the PLS engine &amp; the models</span>
+pip install <span class="pk">nirs4all</span>
+pip install <span class="pk">nirs4all-methods</span>
+pip install <span class="pk">pls4all</span>
+pip install <span class="pk">nirs4all-aom</span></div>
+              <div class="hud-note">formats &amp; io wheels &rarr; <b>&#8595; Releases</b> tab (on PyPI soon)</div>
+            </div>
+            <div class="hud-panel" data-panel="runiverse">
+              <div class="hud-code"><button class="hud-copy" data-copy='install.packages(c("n4m", "pls4all"), repos = "https://gbeurier.r-universe.dev")'>copy</button><span class="cm"># R &mdash; the PLS engine, auto-built from source</span>
+<span class="fn">install.packages</span>(
+  <span class="pk">c("n4m", "pls4all")</span>,
+  repos = <span class="pk">"https://gbeurier.r-universe.dev"</span>
+)</div>
+              <div class="hud-note">Rebuilt on <b>every release</b> &mdash; no compiler needed.</div>
+            </div>
+            <div class="hud-panel" data-panel="cran">
+              <div class="hud-soon"><b>CRAN &mdash; coming soon.</b><br>n4m &amp; pls4all are heading to CRAN. Until then, the <b>R&middot;universe</b> tab installs the exact same packages.</div>
+            </div>
+            <div class="hud-panel" data-panel="octave">
+              <div class="hud-dlrow">
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>Octave + MATLAB</b><span class="meta">methods-matlab-octave.zip</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>MATLAB only</b><span class="meta">methods-matlab.zip</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+              <div class="hud-note">One <b>+n4m</b> binding for both runtimes &mdash; unzip, <b>addpath</b>, go.</div>
+            </div>
+            <div class="hud-panel" data-panel="npm">
+              <div class="hud-soon"><b>npm &mdash; coming soon.</b><br>The JS / WASM package will ship from <b>nirs4all-lite</b>; the browser client is available as <b>nirs4all-web</b> (Explore).</div>
+            </div>
+            <div class="hud-panel" data-panel="dl">
+              <div class="hud-dlrow">
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-formats/releases/latest" target="_blank" rel="noopener"><b>nirs4all-formats</b><span class="meta">v0.1.0 &middot; wheels &middot; R &middot; C-API</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>nirs4all-methods</b><span class="meta">v0.99.0 &middot; R &middot; MATLAB/Octave &middot; src</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>pls4all</b><span class="meta">v0.99.0 &middot; R tarball</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+              <div class="hud-note">nirs4all-io packages &mdash; <b>coming soon</b>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="eco-foot fade-in">
       <a href="https://github.com/GBeurier/nirs4all-ecosystem" target="_blank" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Browse all repositories</a>
     </div>
