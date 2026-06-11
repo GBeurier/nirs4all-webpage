@@ -1129,115 +1129,70 @@
       border: 1px solid var(--border); border-radius: 100px;
       padding: 3px 9px; white-space: nowrap; letter-spacing: -.01em;
     }
-    /* Ecosystem architecture diagram */
-    .eco-arch {
-      margin: 0 auto 38px; max-width: 1000px;
-      background: rgba(255,255,255,0.6); border: 1px solid var(--border);
-      border-radius: 20px; padding: 28px 26px;
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    }
-    .eco-flow { display: flex; align-items: stretch; justify-content: center; flex-wrap: wrap; gap: 8px; }
-    .eco-node {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; gap: 2px; padding: 11px 16px; border-radius: 13px; min-width: 92px;
-      background: var(--surface); border: 1px solid var(--border);
-    }
-    .eco-node small { font-family: var(--mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
-    .eco-node b { font-size: .9rem; font-weight: 600; color: var(--text); letter-spacing: -.01em; }
-    .eco-node.muted { background: transparent; border-style: dashed; }
-    .eco-node.is-core {
-      background: linear-gradient(135deg, var(--teal), var(--cyan-d)); border-color: transparent;
-      color: #fff; min-width: 132px; padding: 15px 22px;
-      box-shadow: 0 14px 30px -12px rgba(13,148,136,0.6);
-    }
-    .eco-node.is-core small { color: rgba(255,255,255,0.82); }
-    .eco-node.is-core b { color: #fff; font-size: 1.12rem; }
-    .eco-node.is-app { border-color: rgba(6,182,212,0.4); }
-    .eco-arrow { display: flex; align-items: center; color: var(--text-3); }
-    .eco-arrow svg { width: 20px; height: 20px; }
-    .eco-stack { display: flex; flex-direction: column; gap: 6px; justify-content: center; }
-    .eco-layers {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 11px 26px;
-      margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--border-warm);
-    }
-    .eco-layer { display: flex; align-items: baseline; gap: 8px; font-size: .82rem; }
-    .eco-layer-k { font-family: var(--mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); }
-    .eco-layer b { font-weight: 600; color: var(--text-2); }
-    .eco-port-band {
-      display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
-      margin-top: 14px; padding: 11px 18px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(79,70,229,0.08), rgba(6,182,212,0.08));
-      border: 1px solid rgba(79,70,229,0.15); font-size: .82rem; color: var(--text-2); text-align: center;
-    }
-    .eco-port-band strong { color: var(--indigo-d); font-weight: 700; }
-
-    /* Ecosystem Explore / Install banner */
-    .eco-banner {
+    /* Ecosystem HUD banner */
+    @keyframes blink { 0%,50% { opacity: 1; } 50.01%,100% { opacity: 0; } }
+    @keyframes hudfade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+    .eco-hud {
       position: relative; overflow: hidden;
-      border-radius: 22px; margin: 0 auto 48px; padding: 34px 36px;
+      border-radius: 20px; margin: 0 auto 46px; padding: 22px 26px 28px;
       background:
-        radial-gradient(ellipse 80% 130% at 6% -10%, rgba(13,148,136,0.32), transparent 60%),
-        radial-gradient(ellipse 70% 130% at 96% 110%, rgba(6,182,212,0.28), transparent 60%),
-        linear-gradient(135deg, #0b1626 0%, #0d2236 55%, #091320 100%);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 34px 80px -34px rgba(8,18,30,0.75), inset 0 1px 0 rgba(255,255,255,0.06);
+        radial-gradient(ellipse 70% 130% at 4% -20%, rgba(13,148,136,0.30), transparent 60%),
+        radial-gradient(ellipse 60% 130% at 98% 120%, rgba(6,182,212,0.24), transparent 60%),
+        linear-gradient(135deg, #0a1320 0%, #0c2032 55%, #081019 100%);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: 0 34px 80px -34px rgba(8,18,30,0.78), inset 0 1px 0 rgba(255,255,255,0.06);
       color: #fff;
     }
-    .eco-banner::before {
+    .eco-hud::before {
       content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .5;
       background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 38px 38px;
-      -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, #000, transparent 80%);
-      mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, #000, transparent 80%);
+      background-size: 36px 36px;
+      -webkit-mask-image: radial-gradient(ellipse 120% 100% at 50% 0%, #000, transparent 78%);
+      mask-image: radial-gradient(ellipse 120% 100% at 50% 0%, #000, transparent 78%);
     }
-    .eco-banner-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1px 1fr; gap: 34px; }
-    .eco-bdiv { background: linear-gradient(180deg, transparent, rgba(255,255,255,0.16), transparent); }
-    .eco-bhead { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
-    .eco-bicon {
-      width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: var(--teal-l);
-    }
-    .eco-bicon svg { width: 21px; height: 21px; }
-    .eco-bhead h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.1; color: #fff; }
-    .eco-bhead p { color: rgba(255,255,255,0.55); font-size: .84rem; margin-top: 1px; }
-    .eco-chiprow { display: flex; flex-wrap: wrap; gap: 9px; }
-    .eco-chip {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 8px 14px; border-radius: 11px;
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      color: #fff; font-size: .85rem; font-weight: 600; transition: all .2s;
-    }
-    .eco-chip:hover { background: rgba(13,148,136,0.2); border-color: rgba(45,212,191,0.55); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px -14px rgba(13,148,136,0.8); }
-    .eco-chip .tag { font-family: var(--mono); font-size: .6rem; font-weight: 500; color: rgba(255,255,255,0.5); background: none; border: none; padding: 0; border-radius: 0; }
-    .eco-chip:hover .tag { color: var(--teal-l); }
-    .eco-langrow { display: flex; flex-direction: column; gap: 9px; }
-    .eco-lang {
-      display: flex; align-items: center; gap: 12px; padding: 9px 14px; border-radius: 12px;
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
-      transition: all .2s; color: #fff;
-    }
-    .eco-lang:not(.is-soon):hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.22); transform: translateX(3px); }
-    .eco-lang.is-soon { opacity: .5; cursor: default; }
-    .ll {
-      width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--mono); font-weight: 700; color: #fff; font-size: .72rem;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 4px 10px -4px rgba(0,0,0,0.55);
-    }
-    .eco-lang-txt { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
-    .eco-lang-txt b { font-size: .88rem; font-weight: 600; color: #fff; }
-    .eco-lang-txt span { font-family: var(--mono); font-size: .68rem; color: rgba(255,255,255,0.5); }
-    .eco-lang .arr { margin-left: auto; color: rgba(255,255,255,0.4); transition: all .2s; flex-shrink: 0; }
-    .eco-lang:hover .arr { color: var(--teal-l); transform: translateY(2px); }
-    .eco-soon { margin-left: auto; font-family: var(--mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,0.42); border: 1px dashed rgba(255,255,255,0.2); border-radius: 100px; padding: 3px 9px; flex-shrink: 0; }
-
-    /* Ecosystem card group headings */
-    .eco-group { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; margin: 24px 0 0; }
-    .eco-group:first-child { margin-top: 0; }
-    .eco-group h3 { font-family: var(--display); font-size: 1.1rem; font-weight: 600; letter-spacing: -.01em; white-space: nowrap; }
-    .eco-group span { font-size: .8rem; color: var(--text-3); white-space: nowrap; }
-    .eco-group::after { content: ''; flex: 1; height: 1px; background: var(--border-warm); }
+    .hud-bar { position: relative; z-index: 1; display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+    .hud-corner { width: 13px; height: 13px; border-left: 2px solid var(--teal-l); border-top: 2px solid var(--teal-l); flex-shrink: 0; }
+    .hud-label { font-family: var(--mono); font-size: .82rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: #fff; }
+    .hud-label i { color: var(--teal-l); font-style: normal; animation: blink 1.3s step-end infinite; }
+    .hud-rule { flex: 1; height: 10px; position: relative; }
+    .hud-rule::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: linear-gradient(90deg, rgba(45,212,191,0.5), rgba(255,255,255,0.06)); }
+    .hud-rule::after { content: ''; position: absolute; left: 0; right: 18px; top: 0; bottom: 0; background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.22) 0 1px, transparent 1px 24px); opacity: .45; }
+    .hud-meta { font-family: var(--mono); font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,0.4); white-space: nowrap; }
+    .hud-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 3px rgba(34,197,94,0.16), 0 0 12px rgba(34,197,94,0.8); animation: pulse 2s infinite; flex-shrink: 0; }
+    .hud-body { position: relative; z-index: 1; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 30px; }
+    .hud-h { font-family: var(--display); font-size: 1.04rem; font-weight: 600; color: #fff; margin-bottom: 13px; display: flex; align-items: baseline; gap: 8px; }
+    .hud-h small { font-family: var(--font); font-size: .72rem; font-weight: 400; color: rgba(255,255,255,0.45); }
+    .hud-links { display: flex; flex-direction: column; gap: 7px; }
+    .hud-links a { display: flex; align-items: center; gap: 9px; padding: 8px 12px; border-radius: 9px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); color: #fff; font-size: .85rem; font-weight: 500; transition: all .18s; }
+    .hud-links a svg { width: 13px; height: 13px; color: rgba(255,255,255,0.4); flex-shrink: 0; transition: color .18s; }
+    .hud-links a:hover { background: rgba(13,148,136,0.16); border-color: rgba(45,212,191,0.45); transform: translateX(3px); }
+    .hud-links a:hover svg { color: var(--teal-l); }
+    .hud-links a .k { margin-left: auto; font-family: var(--mono); font-size: .62rem; color: rgba(255,255,255,0.42); }
+    .hud-links a:hover .k { color: var(--teal-l); }
+    .hud-tabs { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+    .hud-tab { font-family: var(--mono); font-size: .7rem; font-weight: 600; padding: 5px 11px; border-radius: 7px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); color: rgba(255,255,255,0.6); cursor: pointer; transition: all .16s; display: inline-flex; align-items: center; gap: 5px; }
+    .hud-tab:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    .hud-tab.active { background: linear-gradient(135deg, var(--teal), var(--cyan-d)); border-color: transparent; color: #fff; box-shadow: 0 4px 12px -4px rgba(13,148,136,0.6); }
+    .hud-tab .s { font-size: .52rem; opacity: .7; letter-spacing: .04em; }
+    .hud-panel { display: none; }
+    .hud-panel.active { display: block; animation: hudfade .25s ease; }
+    .hud-code { position: relative; background: rgba(0,0,0,0.32); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px 16px; font-family: var(--mono); font-size: .8rem; line-height: 1.75; color: rgba(255,255,255,0.92); overflow-x: auto; white-space: pre; }
+    .hud-code .cm { color: rgba(255,255,255,0.38); }
+    .hud-code .pk { color: #5eead4; }
+    .hud-code .fn { color: #7dd3fc; }
+    .hud-copy { position: absolute; top: 9px; right: 9px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 3px 9px; font-family: var(--font); font-size: .68rem; color: rgba(255,255,255,0.6); cursor: pointer; transition: .18s; }
+    .hud-copy:hover { background: rgba(255,255,255,0.13); color: #fff; }
+    .hud-note { font-family: var(--mono); font-size: .7rem; color: rgba(255,255,255,0.48); margin-top: 9px; }
+    .hud-note b { color: rgba(255,255,255,0.72); font-weight: 600; }
+    .hud-dlrow { display: flex; flex-direction: column; gap: 7px; }
+    .hud-dl { display: flex; align-items: center; gap: 11px; padding: 9px 13px; border-radius: 9px; background: rgba(0,0,0,0.24); border: 1px solid rgba(255,255,255,0.08); color: #fff; font-size: .82rem; transition: all .18s; }
+    .hud-dl:hover { border-color: rgba(45,212,191,0.45); background: rgba(13,148,136,0.12); transform: translateX(2px); }
+    .hud-dl b { font-weight: 600; }
+    .hud-dl .meta { font-family: var(--mono); font-size: .64rem; color: rgba(255,255,255,0.45); }
+    .hud-dl .arr { margin-left: auto; color: rgba(255,255,255,0.4); flex-shrink: 0; }
+    .hud-dl:hover .arr { color: var(--teal-l); }
+    .hud-soon { padding: 15px 16px; background: rgba(0,0,0,0.2); border: 1px dashed rgba(255,255,255,0.13); border-radius: 10px; font-family: var(--mono); font-size: .74rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+    .hud-soon b { color: var(--teal-l); font-weight: 600; }
 
     .eco-card.cat-engine { --eco-accent: var(--indigo); --eco-glow: rgba(79,70,229,0.45); }
     .eco-card.cat-data   { --eco-accent: var(--cyan-d); --eco-glow: rgba(6,182,212,0.45); }
@@ -1321,8 +1276,7 @@
       .wl-strip { display: none; }
       .institutions-grid { flex-direction: column; align-items: center; }
       .inst-card { min-width: 0; width: 100%; max-width: 480px; }
-      .eco-banner-grid { grid-template-columns: 1fr; gap: 26px; }
-      .eco-bdiv { height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent); }
+      .hud-body { grid-template-columns: 1fr; gap: 28px; }
     }
     @media (max-width: 600px) {
       .section { padding: 80px 0; }
@@ -1825,80 +1779,82 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
   <div class="container">
     <div class="eyebrow-wrap fade-in"><span class="eyebrow">The full picture</span></div>
     <h2 class="section-title fade-in">One growing <em>ecosystem</em></h2>
-    <p class="section-sub fade-in">At the center sits <strong>nirs4all</strong>, the Python library. Around it: the no-code <strong>Studio</strong> app, in-browser <strong>demos</strong>, tools for <strong>files &amp; datasets</strong>, portable <strong>engines</strong>, and a leakage-safe execution core &mdash; plus an ongoing <strong>port to every language</strong>. Here is how the pieces fit together.</p>
+    <p class="section-sub fade-in">At the center sits <strong>nirs4all</strong>, the Python library. Around it: the no-code <strong>Studio</strong> app, in-browser <strong>demos</strong>, file &amp; dataset tools, portable <strong>engines</strong>, a leakage-safe execution core &mdash; and an ongoing <strong>port to every language</strong>. Explore the live demos, or install any package below.</p>
 
-    <!-- Architecture diagram -->
-    <div class="eco-arch fade-in">
-      <div class="eco-flow">
-        <div class="eco-node muted"><small>input</small><b>Vendor files</b></div>
-        <div class="eco-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="eco-node"><small>read</small><b>formats</b></div>
-        <div class="eco-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="eco-node"><small>assemble</small><b>io</b></div>
-        <div class="eco-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="eco-node is-core"><small>the core &middot; Python</small><b>nirs4all</b></div>
-        <div class="eco-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="eco-stack">
-          <div class="eco-node is-app"><small>no-code app</small><b>Studio</b></div>
-          <div class="eco-node is-app"><small>in-browser</small><b>web demos</b></div>
+    <!-- Ecosystem HUD banner -->
+    <div class="eco-hud fade-in">
+      <div class="hud-bar">
+        <span class="hud-corner"></span>
+        <span class="hud-label">Ecosystem<i>_</i></span>
+        <span class="hud-rule"></span>
+        <span class="hud-meta">12 repos &middot; open&nbsp;source</span>
+        <span class="hud-dot"></span>
+      </div>
+      <div class="hud-body">
+        <div class="hud-col">
+          <div class="hud-h">Explore <small>run it in your browser</small></div>
+          <div class="hud-links">
+            <a href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-formats <span class="k">demo</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-io <span class="k">demo</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>studio-lite <span class="k">WASM</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-methods <span class="k">site</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-datasets <span class="k">site</span></a>
+          </div>
         </div>
-      </div>
-      <div class="eco-layers">
-        <div class="eco-layer"><span class="eco-layer-k">engines</span><b>methods &middot; aom</b></div>
-        <div class="eco-layer"><span class="eco-layer-k">reproducibility</span><b>dag-ml &middot; dag-ml-data &middot; cluster</b></div>
-        <div class="eco-layer"><span class="eco-layer-k">data</span><b>nirs4all-datasets</b></div>
-      </div>
-      <div class="eco-port-band">
-        <strong>Cross-language port</strong> &mdash; <code style="color:var(--indigo-d);background:rgba(79,70,229,0.08);padding:1px 6px;border-radius:5px">nirs4all-lite</code> runs the whole stack in the browser (WASM), and <strong>methods / formats / io</strong> ship dedicated <strong>R</strong> &amp; <strong>Octave</strong> packages.
-      </div>
-    </div>
-
-    <!-- Explore / Install banner -->
-    <div class="eco-banner fade-in">
-      <div class="eco-banner-grid">
-        <section class="eco-bcol">
-          <div class="eco-bhead">
-            <span class="eco-bicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
-            <div><h3>Explore</h3><p>Run it live in your browser &mdash; nothing to install</p></div>
+        <div class="hud-col hud-install">
+          <div class="hud-h">Install <small>pick a package manager</small></div>
+          <div class="hud-tabs">
+            <button class="hud-tab active" data-tab="pypi">PyPI</button>
+            <button class="hud-tab" data-tab="runiverse">R&middot;universe</button>
+            <button class="hud-tab" data-tab="cran">CRAN <span class="s">soon</span></button>
+            <button class="hud-tab" data-tab="octave">Octave / MATLAB</button>
+            <button class="hud-tab" data-tab="npm">npm <span class="s">soon</span></button>
+            <button class="hud-tab" data-tab="dl">&#8595; Releases</button>
           </div>
-          <div class="eco-chiprow">
-            <a class="eco-chip" href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" rel="noopener">nirs4all-formats <span class="tag">demo</span></a>
-            <a class="eco-chip" href="https://gbeurier.github.io/nirs4all-io/" target="_blank" rel="noopener">nirs4all-io <span class="tag">demo</span></a>
-            <a class="eco-chip" href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" rel="noopener">studio-lite <span class="tag">WASM</span></a>
-            <a class="eco-chip" href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" rel="noopener">nirs4all-methods <span class="tag">site</span></a>
-            <a class="eco-chip" href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" rel="noopener">nirs4all-datasets <span class="tag">site</span></a>
+          <div class="hud-panels">
+            <div class="hud-panel active" data-panel="pypi">
+              <div class="hud-code"><button class="hud-copy" data-copy="pip install nirs4all&#10;pip install nirs4all-methods&#10;pip install pls4all&#10;pip install nirs4all-aom">copy</button><span class="cm"># the library, the PLS engine &amp; the models</span>
+pip install <span class="pk">nirs4all</span>
+pip install <span class="pk">nirs4all-methods</span>
+pip install <span class="pk">pls4all</span>
+pip install <span class="pk">nirs4all-aom</span></div>
+              <div class="hud-note">formats &amp; io wheels &rarr; <b>&#8595; Releases</b> tab (on PyPI soon)</div>
+            </div>
+            <div class="hud-panel" data-panel="runiverse">
+              <div class="hud-code"><button class="hud-copy" data-copy='install.packages(c("n4m", "pls4all"), repos = "https://gbeurier.r-universe.dev")'>copy</button><span class="cm"># R &mdash; the PLS engine, auto-built from source</span>
+<span class="fn">install.packages</span>(
+  <span class="pk">c("n4m", "pls4all")</span>,
+  repos = <span class="pk">"https://gbeurier.r-universe.dev"</span>
+)</div>
+              <div class="hud-note">Rebuilt on <b>every release</b> &mdash; no compiler needed.</div>
+            </div>
+            <div class="hud-panel" data-panel="cran">
+              <div class="hud-soon"><b>CRAN &mdash; coming soon.</b><br>n4m &amp; pls4all are heading to CRAN. Until then, the <b>R&middot;universe</b> tab installs the exact same packages.</div>
+            </div>
+            <div class="hud-panel" data-panel="octave">
+              <div class="hud-dlrow">
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>Octave + MATLAB</b><span class="meta">methods-matlab-octave.zip</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>MATLAB only</b><span class="meta">methods-matlab.zip</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+              <div class="hud-note">One <b>+n4m</b> binding for both runtimes &mdash; unzip, <b>addpath</b>, go.</div>
+            </div>
+            <div class="hud-panel" data-panel="npm">
+              <div class="hud-soon"><b>npm &mdash; coming soon.</b><br>The JS / WASM packages aren't published yet &mdash; but you can run them right now in the <b>studio-lite</b> demo (Explore).</div>
+            </div>
+            <div class="hud-panel" data-panel="dl">
+              <div class="hud-dlrow">
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-formats/releases/latest" target="_blank" rel="noopener"><b>nirs4all-formats</b><span class="meta">v0.1.0 &middot; wheels &middot; R &middot; C-API</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>nirs4all-methods</b><span class="meta">v0.99.0 &middot; R &middot; MATLAB/Octave &middot; src</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a class="hud-dl" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener"><b>pls4all</b><span class="meta">v0.99.0 &middot; R tarball</span><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+              <div class="hud-note">nirs4all-io packages &mdash; <b>coming soon</b>.</div>
+            </div>
           </div>
-        </section>
-        <div class="eco-bdiv"></div>
-        <section class="eco-bcol">
-          <div class="eco-bhead">
-            <span class="eco-bicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
-            <div><h3>Install</h3><p>Add the packages to your stack</p></div>
-          </div>
-          <div class="eco-langrow">
-            <a class="eco-lang" href="https://pypi.org/project/nirs4all" target="_blank" rel="noopener">
-              <span class="ll" style="background:linear-gradient(135deg,#3776ab,#2b5b84)">Py</span>
-              <span class="eco-lang-txt"><b>Python</b><span>pip install nirs4all</span></span>
-              <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </a>
-            <a class="eco-lang" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener">
-              <span class="ll" style="background:linear-gradient(135deg,#276dc3,#1c5aa6)">R</span>
-              <span class="eco-lang-txt"><b>R package</b><span>nirs4all-methods &middot; n4m</span></span>
-              <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </a>
-            <a class="eco-lang" href="https://github.com/GBeurier/nirs4all-methods/releases/latest" target="_blank" rel="noopener" title="MATLAB / Octave package — one +pls4all binding (build_mex.m uses mkoctfile under Octave)">
-              <span class="ll" style="background:linear-gradient(135deg,#0a7cba,#075a87)">Oc</span>
-              <span class="eco-lang-txt"><b>MATLAB / Octave</b><span>+n4m binding</span></span>
-              <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </a>
-          </div>
-        </section>
+        </div>
       </div>
     </div>
 
     <div class="eco-grid">
-
-      <div class="eco-group"><h3>Core &amp; app</h3><span>what you use directly</span></div>
 
       <!-- nirs4all · Python library -->
       <div class="eco-card cat-core fade-in">
@@ -1935,8 +1891,6 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
         </div>
       </div>
 
-      <div class="eco-group"><h3>Engines &amp; methods</h3><span>the numerical cores</span></div>
-
       <!-- nirs4all-methods · PLS engine -->
       <div class="eco-card cat-engine fade-in">
         <div class="eco-head">
@@ -1971,8 +1925,6 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
         </div>
       </div>
 
-      <div class="eco-group"><h3>Files &amp; datasets</h3><span>get data in</span></div>
-
       <!-- nirs4all-formats · File readers -->
       <div class="eco-card cat-data fade-in">
         <div class="eco-head">
@@ -1981,7 +1933,7 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
             <div class="eco-cat">File readers</div>
             <div class="eco-name">nirs4all-formats <span class="eco-lang">Rust</span></div>
           </div>
-          <span class="eco-ver">v0.1.0-alpha</span>
+          <span class="eco-ver">v0.1.0</span>
         </div>
         <p>Rust-first, low-level readers for ~58 NIRS &amp; spectroscopy format families. Content-sniffed, lossless, provenance-tracked records with Python, R, WebAssembly and C bindings &mdash; the messy vendor-file zoo turned into one clean data model. Try the full reader catalog right in the browser via the live demo.</p>
         <div class="eco-links">
@@ -2026,8 +1978,6 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
           <span class="eco-status">Alpha</span>
         </div>
       </div>
-
-      <div class="eco-group"><h3>Reproducible &amp; distributed execution</h3><span>safety &amp; scale</span></div>
 
       <!-- dag-ml · Execution core -->
       <div class="eco-card cat-dag fade-in">
@@ -2080,8 +2030,6 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
         </div>
       </div>
 
-      <div class="eco-group"><h3>Cross-language port</h3><span>beyond Python &mdash; in progress</span></div>
-
       <!-- nirs4all-lite · Browser demo & multi-language distribution -->
       <div class="eco-card cat-dag fade-in">
         <div class="eco-head">
@@ -2099,8 +2047,6 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
           <span class="eco-status">Alpha</span>
         </div>
       </div>
-
-      <div class="eco-group"><h3>Also taking shape</h3><span>early / coming</span></div>
 
       <!-- nirs4all-arena · New -->
       <div class="eco-card cat-soon fade-in">
@@ -2661,6 +2607,18 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
     });
   });
 
+  // Ecosystem HUD install tabs
+  document.querySelectorAll('.hud-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const root = btn.closest('.hud-install');
+      root.querySelectorAll('.hud-tab').forEach(b => b.classList.remove('active'));
+      root.querySelectorAll('.hud-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const panel = root.querySelector('.hud-panel[data-panel="' + btn.dataset.tab + '"]');
+      if (panel) panel.classList.add('active');
+    });
+  });
+
   // Copy buttons
   function copyText(text, btn) {
     navigator.clipboard.writeText(text).then(() => {
@@ -2671,6 +2629,9 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
   }
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', () => copyText(btn.dataset.copy || btn.closest('.code-block, .bibtex-block').querySelector('pre').textContent, btn));
+  });
+  document.querySelectorAll('.hud-copy').forEach(btn => {
+    btn.addEventListener('click', () => copyText(btn.dataset.copy, btn));
   });
   document.getElementById('copy-pip').addEventListener('click', () => {
     copyText('pip install nirs4all', document.getElementById('copy-pip'));
