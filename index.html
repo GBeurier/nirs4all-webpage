@@ -72,7 +72,10 @@
             "https://github.com/GBeurier/nirs4all-io",
             "https://gbeurier.github.io/nirs4all-io/",
             "https://github.com/GBeurier/nirs4all-lite",
-            "https://gbeurier.github.io/nirs4all-lite/",
+            "https://github.com/GBeurier/nirs4all-web",
+            "https://gbeurier.github.io/nirs4all-web/",
+            "https://github.com/GBeurier/nirs4all-papers",
+            "https://github.com/GBeurier/nirs4all-org",
             "https://github.com/GBeurier/nirs4all-cluster",
             "https://github.com/GBeurier/dag-ml",
             "https://github.com/GBeurier/dag-ml-data",
@@ -1323,7 +1326,8 @@
           <a href="https://github.com/GBeurier/nirs4all-datasets" target="_blank" rel="noopener" class="nav-dd-item acc-data" role="menuitem"><b>nirs4all-datasets</b><span>Reference data</span></a>
           <a href="https://github.com/GBeurier/dag-ml" target="_blank" rel="noopener" class="nav-dd-item acc-dag" role="menuitem"><b>dag-ml</b><span>Execution core</span></a>
           <a href="https://github.com/GBeurier/dag-ml-data" target="_blank" rel="noopener" class="nav-dd-item acc-dag" role="menuitem"><b>dag-ml-data</b><span>Data contracts</span></a>
-          <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" rel="noopener" class="nav-dd-item acc-dag" role="menuitem"><b>nirs4all-lite</b><span>WASM demo</span></a>
+          <a href="https://github.com/GBeurier/nirs4all-lite" target="_blank" rel="noopener" class="nav-dd-item acc-dag" role="menuitem"><b>nirs4all-lite</b><span>Portable bindings</span></a>
+          <a href="https://gbeurier.github.io/nirs4all-web/" target="_blank" rel="noopener" class="nav-dd-item acc-dag" role="menuitem"><b>nirs4all-web</b><span>WASM client</span></a>
           <a href="https://github.com/GBeurier/nirs4all-ecosystem" target="_blank" rel="noopener" class="nav-dd-all" role="menuitem">Browse all repositories &rarr;</a>
         </div>
       </div>
@@ -1796,7 +1800,7 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
           <div class="hud-links">
             <a href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-formats <span class="k">demo</span></a>
             <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-io <span class="k">demo</span></a>
-            <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>studio-lite <span class="k">WASM</span></a>
+            <a href="https://gbeurier.github.io/nirs4all-web/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-web <span class="k">WASM</span></a>
             <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-methods <span class="k">site</span></a>
             <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>nirs4all-datasets <span class="k">site</span></a>
           </div>
@@ -1839,7 +1843,7 @@ pip install <span class="pk">nirs4all-aom</span></div>
               <div class="hud-note">One <b>+n4m</b> binding for both runtimes &mdash; unzip, <b>addpath</b>, go.</div>
             </div>
             <div class="hud-panel" data-panel="npm">
-              <div class="hud-soon"><b>npm &mdash; coming soon.</b><br>The JS / WASM packages aren't published yet &mdash; but you can run them right now in the <b>studio-lite</b> demo (Explore).</div>
+              <div class="hud-soon"><b>npm &mdash; coming soon.</b><br>The JS / WASM package will ship from <b>nirs4all-lite</b>; the browser client is available as <b>nirs4all-web</b> (Explore).</div>
             </div>
             <div class="hud-panel" data-panel="dl">
               <div class="hud-dlrow">
@@ -2030,21 +2034,38 @@ pip install <span class="pk">nirs4all-aom</span></div>
         </div>
       </div>
 
-      <!-- nirs4all-lite · Browser demo & multi-language distribution -->
+      <!-- nirs4all-web · Browser client -->
+      <div class="eco-card cat-dag fade-in">
+        <div class="eco-head">
+          <span class="eco-logo" data-eco-logo="nirs4all-web" aria-hidden="true">web</span>
+          <div class="eco-titles">
+            <div class="eco-cat">Browser client</div>
+            <div class="eco-name">nirs4all-web <span class="eco-lang">WASM &middot; JS</span></div>
+          </div>
+          <span class="eco-ver">v0.1.0</span>
+        </div>
+        <p>The browser-native client: a full-WASM mini Studio that runs the whole NIRS loop &mdash; load spectra, build a pipeline from nirs4all-methods nodes, train, score and predict &mdash; entirely client-side, no Python.</p>
+        <div class="eco-links">
+          <a href="https://gbeurier.github.io/nirs4all-web/" target="_blank" class="pill pill-amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><path d="m10 13 3 2-3 2z" fill="currentColor"/></svg>Live demo</a>
+          <a href="https://github.com/GBeurier/nirs4all-web" target="_blank" class="pill pill-amber"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <span class="eco-status">Alpha</span>
+        </div>
+      </div>
+
+      <!-- nirs4all-lite · Portable aggregate distribution -->
       <div class="eco-card cat-dag fade-in">
         <div class="eco-head">
           <span class="eco-logo" data-eco-logo="nirs4all-lite" aria-hidden="true">lt</span>
           <div class="eco-titles">
-            <div class="eco-cat">Browser demo &amp; distribution</div>
-            <div class="eco-name">nirs4all-lite <span class="eco-lang">WASM &middot; JS</span></div>
+            <div class="eco-cat">Portable bindings</div>
+            <div class="eco-name">nirs4all-lite <span class="eco-lang">Rust &middot; Python &middot; R &middot; WASM</span></div>
           </div>
-          <span class="eco-ver">v0.1.0</span>
+          <span class="eco-ver">seed</span>
         </div>
-        <p>The browser-native face of the low-level stack: <em>studio-lite</em>, a full-WASM &ldquo;mini Studio&rdquo; that runs the whole NIRS loop &mdash; load spectra, build a pipeline from nirs4all-methods nodes, train, score and predict &mdash; entirely client-side, no Python. Also packages the formats / io / methods / dag-ml cores for non-Python ecosystems.</p>
+        <p>The canonical low-level distribution that aggregates dag-ml, dag-ml-data, formats, io, datasets and methods. It exposes native bindings without adding new parsers or methods, with parity checks against upstream bindings and the full Python nirs4all library.</p>
         <div class="eco-links">
-          <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" class="pill pill-amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><path d="m10 13 3 2-3 2z" fill="currentColor"/></svg>Live demo</a>
           <a href="https://github.com/GBeurier/nirs4all-lite" target="_blank" class="pill pill-amber"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
-          <span class="eco-status">Alpha</span>
+          <span class="eco-status">Scaffold</span>
         </div>
       </div>
 
@@ -2391,6 +2412,20 @@ pip install <span class="pk">nirs4all-aom</span></div>
         <h4>Ecosystem Hub</h4>
         <p>The meta-repository pinning every nirs4all and dag-ml project together</p>
       </a>
+      <a href="https://github.com/GBeurier/nirs4all-papers" target="_blank" class="link-card">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8"/><path d="M8 17h6"/></svg>
+        </div>
+        <h4>nirs4all-papers</h4>
+        <p>Public deposited papers, reproducibility kits, and stable companion artifacts</p>
+      </a>
+      <a href="https://github.com/GBeurier/nirs4all-org" target="_blank" class="link-card">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></svg>
+        </div>
+        <h4>nirs4all-org</h4>
+        <p>Source repository for this website and its GitHub Pages deployment</p>
+      </a>
       <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" class="link-card">
         <div class="link-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="8" rx="1"/><rect x="14" y="5" width="3" height="13" rx="1"/></svg>
@@ -2419,12 +2454,19 @@ pip install <span class="pk">nirs4all-aom</span></div>
         <h4>nirs4all-datasets</h4>
         <p>Catalog site for the curated, DOI-citable NIRS reference datasets</p>
       </a>
-      <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" class="link-card">
+      <a href="https://gbeurier.github.io/nirs4all-web/" target="_blank" class="link-card">
         <div class="link-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
         </div>
+        <h4>nirs4all-web</h4>
+        <p>The whole NIRS loop running in your browser, no Python (WASM)</p>
+      </a>
+      <a href="https://github.com/GBeurier/nirs4all-lite" target="_blank" class="link-card">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/><circle cx="8" cy="7" r="1"/><circle cx="8" cy="12" r="1"/><circle cx="8" cy="17" r="1"/></svg>
+        </div>
         <h4>nirs4all-lite</h4>
-        <p>studio-lite &mdash; the whole NIRS loop running in your browser, no Python (WASM)</p>
+        <p>Portable aggregate bindings for Rust, Python, R, MATLAB/Octave and WASM</p>
       </a>
       <a href="https://pypi.org/project/nirs4all-aom" target="_blank" class="link-card">
         <div class="link-icon">
@@ -2889,6 +2931,7 @@ pip install <span class="pk">nirs4all-aom</span></div>
     "nirs4all-datasets": "assets/logos_ecosystem/logo_datasets.png",
     "dag-ml":            "",                            // TODO: add logo
     "dag-ml-data":       "",                            // TODO: add logo
+    "nirs4all-web":      "assets/logos_ecosystem/logo_lite.png",
     "nirs4all-lite":     "assets/logos_ecosystem/logo_lite.png",
     "nirs4all-arena":    "assets/logos_ecosystem/logo_arena.png",
   };

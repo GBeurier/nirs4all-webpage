@@ -1,6 +1,8 @@
-# nirs4all Landing Page
+# nirs4all.org
 
 Official landing page for [nirs4all](https://github.com/GBeurier/nirs4all) and [nirs4all Studio](https://github.com/GBeurier/nirs4all-studio).
+
+Repository name: `nirs4all-org`
 
 Visible at [nirs4all.org](https://nirs4all.org)
 
@@ -11,7 +13,7 @@ Open `index.html` directly in any browser — no server needed.
 ## Structure
 
 ```
-nirs4all-page/
+nirs4all-org/
 ├── index.html              # The entire landing page (HTML + CSS + JS)
 ├── assets/                 # Logos and screenshots
 │   ├── nirs4all_logo.png
