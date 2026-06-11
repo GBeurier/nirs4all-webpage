@@ -3,3 +3,6 @@
 
 # WSL/Windows file metadata streams
 *:Zone.Identifier
+
+# Local codegraph index (tooling artifact)
+.codegraph/

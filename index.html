@@ -895,6 +895,37 @@
     .inst-name { font-size: 1.1rem; font-weight: 700; }
     .inst-desc { color: var(--text-2); font-size: .88rem; line-height: 1.7; }
 
+    /* ── Adopters / Partners ──────────────────────────────────────── */
+    .partners-wall {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 18px; max-width: 1040px; margin: 0 auto;
+    }
+    .partner {
+      flex: 0 1 196px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 16px; padding: 30px 22px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+    }
+    .partner:hover {
+      transform: translateY(-3px); border-color: var(--teal); box-shadow: var(--shadow);
+    }
+    .partner-logo {
+      height: 100px; display: flex; align-items: center; justify-content: center;
+    }
+    .partner-logo img {
+      max-height: 100px; max-width: 100%; width: auto; object-fit: contain;
+      filter: grayscale(1); opacity: .68;
+      transition: filter .3s ease, opacity .3s ease;
+    }
+    .partner:hover .partner-logo img { filter: none; opacity: 1; }
+    .partner-name {
+      font-size: .76rem; font-weight: 500; line-height: 1.35;
+      color: var(--text-3); text-align: center; transition: color .25s;
+    }
+    .partner:hover .partner-name { color: var(--text-2); }
+
     /* ── Publications ─────────────────────────────────────────────── */
     .pub-list { display: flex; flex-direction: column; gap: 20px; }
     .pub-card {
@@ -1858,6 +1889,49 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
   </div>
 </section>
 
+<!-- ── Adopters / Partners ──────────────────────────────────────── -->
+<section id="adopters" class="section section-aurora">
+  <div class="container">
+    <div class="eyebrow-wrap fade-in"><span class="eyebrow">Adoption</span></div>
+    <h2 class="section-title fade-in">They already <em>use it</em></h2>
+    <p class="section-sub fade-in">Research institutes, universities, and companies across Europe and Africa build their near-infrared spectroscopy workflows with nirs4all.</p>
+    <div class="partners-wall fade-in">
+      <div class="partner">
+        <div class="partner-logo"><img src="assets/partners/cnrs.png" alt="CNRS &mdash; Centre National de la Recherche Scientifique" loading="lazy" decoding="async" /></div>
+        <span class="partner-name">CNRS</span>
+      </div>
+      <div class="partner">
+        <div class="partner-logo"><img src="assets/partners/university-of-potsdam.png" alt="University of Potsdam, Germany" loading="lazy" decoding="async" /></div>
+        <span class="partner-name">University of Potsdam</span>
+      </div>
+      <div class="partner">
+        <div class="partner-logo"><img src="assets/partners/iita.png" alt="International Institute of Tropical Agriculture (IITA)" loading="lazy" decoding="async" /></div>
+        <span class="partner-name">IITA</span>
+      </div>
+      <div class="partner">
+        <div class="partner-logo"><img src="assets/partners/csir.png" alt="Council for Scientific and Industrial Research (CSIR), Ghana" loading="lazy" decoding="async" /></div>
+        <span class="partner-name">CSIR Ghana</span>
+      </div>
+      <div class="partner">
+        <div class="partner-logo"><img src="assets/partners/cnra.png" alt="Centre National de Recherche Agronomique (CNRA), C&ocirc;te d'Ivoire" loading="lazy" decoding="async" /></div>
+        <span class="partner-name">CNRA C&ocirc;te d'Ivoire</span>
+      </div>
+      <div class="partner">
+        <div class="partner-logo"><img src="assets/partners/bowen-university.png" alt="Bowen University, Iwo, Nigeria" loading="lazy" decoding="async" /></div>
+        <span class="partner-name">Bowen University</span>
+      </div>
+      <div class="partner">
+        <div class="partner-logo"><img src="assets/partners/universite-de-parakou.png" alt="Universit&eacute; de Parakou, Benin" loading="lazy" decoding="async" /></div>
+        <span class="partner-name">Universit&eacute; de Parakou</span>
+      </div>
+      <div class="partner">
+        <div class="partner-logo"><img src="assets/partners/getade.png" alt="Getade &mdash; Solutions innovantes pour la nature" loading="lazy" decoding="async" /></div>
+        <span class="partner-name">Getade</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── Publications ─────────────────────────────────────────────── -->
 <section id="publications" class="section section-paper">
   <div class="container">
@@ -1866,14 +1940,118 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
     <p class="section-sub fade-in">Research using nirs4all and related spectroscopic analysis.</p>
     <div class="pub-list fade-in">
       <div class="pub-card">
+        <div class="pub-year">2026</div>
+        <div class="pub-body">
+          <div class="pub-title">Tabular foundation models for robust calibration of near-infrared chemical sensing data</div>
+          <div class="pub-authors">Reiter R., Cornet D., Michel F. et al.</div>
+          <div class="pub-journal">arXiv preprint, 2026</div>
+          <div class="pub-links">
+            <span class="pill pill-cyan" style="cursor:default">NIRS &middot; Foundation models</span>
+            <span class="pill pill-indigo" style="cursor:default">Calibration</span>
+            <a href="https://doi.org/10.48550/arXiv.2605.21544" target="_blank" rel="noopener" class="pill pill-teal">arXiv &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2026</div>
+        <div class="pub-body">
+          <div class="pub-title">Reframing preprocessing selection as model-internal calibration in near-infrared spectroscopy: a large-scale benchmark of operator-adaptive PLS and Ridge models</div>
+          <div class="pub-authors">Beurier G., Reiter R., No&ucirc;s C. et al.</div>
+          <div class="pub-journal">arXiv preprint, 2026</div>
+          <div class="pub-links">
+            <span class="pill pill-cyan" style="cursor:default">Preprocessing &middot; PLS &middot; Ridge</span>
+            <span class="pill pill-amber" style="cursor:default">Benchmark</span>
+            <a href="https://doi.org/10.48550/arXiv.2605.13587" target="_blank" rel="noopener" class="pill pill-teal">arXiv &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card">
         <div class="pub-year">2024</div>
         <div class="pub-body">
-          <div class="pub-title">Prediction of yam amylose content using near-infrared spectroscopy and convolutional neural networks</div>
-          <div class="pub-authors">Beurier G., Cornet D., Rouan L. et al.</div>
-          <div class="pub-journal">Journal of the Science of Food and Agriculture, 2024</div>
+          <div class="pub-title">Convolutional neural network allows amylose content prediction in yam (<em>Dioscorea alata</em> L.) flour using near infrared spectroscopy</div>
+          <div class="pub-authors">Houngbo M.E., Desfontaines L., Diman J.-L. et al.</div>
+          <div class="pub-journal">Journal of the Science of Food and Agriculture, 104(8), 4915&ndash;4921, 2024</div>
           <div class="pub-links">
             <span class="pill pill-cyan" style="cursor:default">NIRS &middot; CNN &middot; Amylose</span>
             <span class="pill pill-indigo" style="cursor:default">Yam &middot; Starch</span>
+            <a href="https://doi.org/10.1002/jsfa.12825" target="_blank" rel="noopener" class="pill pill-teal">DOI &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2024</div>
+        <div class="pub-body">
+          <div class="pub-title">Food quality profile of pounded yam and implications for yam breeding</div>
+          <div class="pub-authors">Otegbayo B.O., Oroniran O., Tanimola A. et al.</div>
+          <div class="pub-journal">Journal of the Science of Food and Agriculture, 104(8), 4635&ndash;4651, 2024</div>
+          <div class="pub-links">
+            <span class="pill pill-cyan" style="cursor:default">Food quality</span>
+            <span class="pill pill-indigo" style="cursor:default">Yam breeding</span>
+            <a href="https://doi.org/10.1002/jsfa.12835" target="_blank" rel="noopener" class="pill pill-teal">DOI &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2024</div>
+        <div class="pub-body">
+          <div class="pub-title">NIRSpredict: a platform for predicting plant traits from near infra-red spectroscopy</div>
+          <div class="pub-authors">Vaillant A., Beurier G., Cornet D. et al.</div>
+          <div class="pub-journal">BMC Plant Biology, 24, Article 1100, 2024</div>
+          <div class="pub-links">
+            <span class="pill pill-cyan" style="cursor:default">NIRS &middot; Plant traits</span>
+            <span class="pill pill-indigo" style="cursor:default">Platform</span>
+            <a href="https://doi.org/10.1186/s12870-024-05776-0" target="_blank" rel="noopener" class="pill pill-teal">DOI &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2022</div>
+        <div class="pub-body">
+          <div class="pub-title">A perspective on plant phenomics: coupling deep learning and near-infrared spectroscopy</div>
+          <div class="pub-authors">Vasseur F., Cornet D., Beurier G. et al.</div>
+          <div class="pub-journal">Frontiers in Plant Science, 13, Article 836488, 2022</div>
+          <div class="pub-links">
+            <span class="pill pill-cyan" style="cursor:default">Phenomics &middot; Deep learning</span>
+            <span class="pill pill-indigo" style="cursor:default">NIRS</span>
+            <a href="https://doi.org/10.3389/fpls.2022.836488" target="_blank" rel="noopener" class="pill pill-teal">DOI &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2021</div>
+        <div class="pub-body">
+          <div class="pub-title">Near-infrared spectroscopy (NIRS) applications for high throughput phenotyping (HTP) for cassava and yam: a review</div>
+          <div class="pub-authors">Alamu E.O., Nuwamanya E., Cornet D. et al.</div>
+          <div class="pub-journal">International Journal of Food Science &amp; Technology, 56(3), 1491&ndash;1501, 2021</div>
+          <div class="pub-links">
+            <span class="pill pill-cyan" style="cursor:default">NIRS &middot; HTP &middot; Review</span>
+            <span class="pill pill-indigo" style="cursor:default">Cassava &middot; Yam</span>
+            <a href="https://doi.org/10.1111/ijfs.14773" target="_blank" rel="noopener" class="pill pill-teal">DOI &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2021</div>
+        <div class="pub-body">
+          <div class="pub-title">Predicting quality, texture and chemical content of yam (<em>Dioscorea alata</em> L.) tubers using near infrared spectroscopy</div>
+          <div class="pub-authors">Ehounou A.E., Cornet D., Desfontaines L. et al.</div>
+          <div class="pub-journal">Journal of Near Infrared Spectroscopy, 29(3), 128&ndash;139, 2021</div>
+          <div class="pub-links">
+            <span class="pill pill-cyan" style="cursor:default">NIRS &middot; Quality &middot; Texture</span>
+            <span class="pill pill-indigo" style="cursor:default">Yam</span>
+            <a href="https://doi.org/10.1177/09670335211007575" target="_blank" rel="noopener" class="pill pill-teal">DOI &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-year">2019</div>
+        <div class="pub-body">
+          <div class="pub-title">Development of NIRS and molecular marker to improve breeding efficiency in greater yam (<em>Dioscorea alata</em> L.) for key quality traits</div>
+          <div class="pub-authors">Ehounou A.E., Cormier F., Cornet D. et al.</div>
+          <div class="pub-journal">International Conference on Applied Biochemistry and Biotechnology (ABB 2019), Macau, China</div>
+          <div class="pub-links">
+            <span class="pill pill-cyan" style="cursor:default">NIRS &middot; Molecular markers</span>
+            <span class="pill pill-indigo" style="cursor:default">Yam breeding</span>
           </div>
         </div>
       </div>
