@@ -72,9 +72,14 @@
             "https://pypi.org/project/nirs4all-formats/",
             "https://crates.io/crates/nirs4all-formats",
             "https://github.com/GBeurier/nirs4all-io",
+            "https://gbeurier.github.io/nirs4all-io/",
+            "https://github.com/GBeurier/nirs4all-lite",
+            "https://gbeurier.github.io/nirs4all-lite/",
+            "https://github.com/GBeurier/nirs4all-cluster",
             "https://github.com/GBeurier/dag-ml",
             "https://github.com/GBeurier/dag-ml-data",
-            "https://github.com/GBeurier/nirs4all-datasets"
+            "https://github.com/GBeurier/nirs4all-datasets",
+            "https://gbeurier.github.io/nirs4all-datasets/"
           ],
           "contactPoint": {
             "@type": "ContactPoint",
@@ -566,6 +571,38 @@
       isolation: isolate;
     }
     .hero-content > * { position: relative; z-index: 1; }
+    /* Hero quick-access strip — packages with live hosted sites */
+    .hero-sites {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 8px; margin-bottom: 30px;
+    }
+    .hero-sites-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: .68rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--teal-d); margin-right: 2px;
+    }
+    .hero-sites-label::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%; background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.16), 0 0 12px rgba(34,197,94,0.7);
+      animation: pulse 2s infinite;
+    }
+    .hero-site-chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 13px; border-radius: 100px;
+      background: rgba(255,255,255,0.72); border: 1px solid rgba(13,148,136,0.18);
+      color: var(--text); font-size: .8rem; font-weight: 600;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 6px 18px -10px rgba(13,94,88,0.3); transition: all .2s;
+    }
+    .hero-site-chip span {
+      font-family: var(--mono); font-size: .62rem; font-weight: 500;
+      color: var(--text-3); letter-spacing: .02em;
+    }
+    .hero-site-chip:hover {
+      color: var(--teal-d); border-color: var(--teal);
+      background: rgba(255,255,255,0.96); transform: translateY(-1px);
+      box-shadow: 0 10px 24px -10px rgba(13,94,88,0.42);
+    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.85); border: 1px solid rgba(13,148,136,0.18);
@@ -1135,6 +1172,13 @@
       color: var(--text-3); background: var(--paper-2);
       border: 1px dashed var(--border-warm); font-family: var(--mono);
     }
+    .eco-ver {
+      margin-left: auto; align-self: flex-start; flex-shrink: 0;
+      font-family: var(--mono); font-size: .66rem; font-weight: 600;
+      color: var(--text-3); background: var(--bg-alt);
+      border: 1px solid var(--border); border-radius: 100px;
+      padding: 3px 9px; white-space: nowrap; letter-spacing: -.01em;
+    }
     .eco-card.cat-engine { --eco-accent: var(--indigo); --eco-glow: rgba(79,70,229,0.45); }
     .eco-card.cat-data   { --eco-accent: var(--cyan-d); --eco-glow: rgba(6,182,212,0.45); }
     .eco-card.cat-dag    { --eco-accent: var(--amber);  --eco-glow: rgba(217,119,6,0.42); }
@@ -1262,6 +1306,7 @@
           <a href="https://github.com/GBeurier/nirs4all-datasets" target="_blank" rel="noopener" class="nav-dd-item acc-data" role="menuitem"><b>nirs4all-datasets</b><span>Reference data</span></a>
           <a href="https://github.com/GBeurier/dag-ml" target="_blank" rel="noopener" class="nav-dd-item acc-dag" role="menuitem"><b>dag-ml</b><span>Execution core</span></a>
           <a href="https://github.com/GBeurier/dag-ml-data" target="_blank" rel="noopener" class="nav-dd-item acc-dag" role="menuitem"><b>dag-ml-data</b><span>Data contracts</span></a>
+          <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" rel="noopener" class="nav-dd-item acc-dag" role="menuitem"><b>nirs4all-lite</b><span>WASM demo</span></a>
           <a href="https://github.com/GBeurier/nirs4all-ecosystem" target="_blank" rel="noopener" class="nav-dd-all" role="menuitem">Browse all repositories &rarr;</a>
         </div>
       </div>
@@ -1313,6 +1358,14 @@
   </div>
 
   <div class="container hero-content fade-in">
+    <div class="hero-sites">
+      <span class="hero-sites-label">Try it live</span>
+      <a href="https://gbeurier.github.io/nirs4all-formats/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-formats <span>demo</span></a>
+      <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-io <span>demo</span></a>
+      <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" rel="noopener" class="hero-site-chip">studio-lite <span>WASM</span></a>
+      <a href="https://gbeurier.github.io/nirs4all-methods/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-methods <span>site</span></a>
+      <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" rel="noopener" class="hero-site-chip">nirs4all-datasets <span>site</span></a>
+    </div>
     <img src="assets/nirs4all_logo.png" alt="nirs4all" class="hero-logo" />
     <!-- <div class="hero-kicker">Near-Infrared Spectroscopy · Open Source</div> -->
     <br><br>
@@ -1652,6 +1705,7 @@
             <div class="eco-cat">Python library</div>
             <div class="eco-name">nirs4all <span class="eco-lang">Python</span></div>
           </div>
+          <span class="eco-ver" data-lib-version-prefix>v0.9.3</span>
         </div>
         <p>The Python core of the ecosystem: declarative NIRS pipelines with 30+ spectral preprocessings, 15+ advanced PLS models, and a unified API over scikit-learn, TensorFlow, PyTorch and JAX. Train, explain, and export portable <code style="color:var(--cyan-d);background:var(--bg-alt);padding:1px 5px;border-radius:4px">.n4a</code> model bundles.</p>
         <div class="eco-links">
@@ -1669,6 +1723,7 @@
             <div class="eco-cat">Desktop &amp; web app</div>
             <div class="eco-name">nirs4all Studio <span class="eco-lang">React &middot; Electron</span></div>
           </div>
+          <span class="eco-ver" data-studio-version-prefix>v0.7.0</span>
         </div>
         <p>The no-code application built on the library: a drag-and-drop pipeline builder, real-time spectral visualization, experiment tracking, and SHAP analysis &mdash; packaged with Electron for Windows, Linux and macOS, and runnable on the web.</p>
         <div class="eco-links">
@@ -1685,6 +1740,7 @@
             <div class="eco-cat">PLS engine</div>
             <div class="eco-name">nirs4all-methods <span class="eco-lang">C++ &middot; C ABI</span></div>
           </div>
+          <span class="eco-ver">v0.99.0</span>
         </div>
         <p>A portable Partial Least Squares engine in C++17 with a stable C ABI (<code style="color:var(--indigo-d);background:var(--bg-alt);padding:1px 5px;border-radius:4px">libn4m</code>) and first-class bindings for Python, R, MATLAB/Octave, JavaScript/WebAssembly and Android &mdash; one numerical core, parity-checked across every language.</p>
         <div class="eco-links">
@@ -1701,6 +1757,7 @@
             <div class="eco-cat">Adaptive models</div>
             <div class="eco-name">nirs4all-aom <span class="eco-lang">Python &middot; sklearn</span></div>
           </div>
+          <span class="eco-ver">v0.1.1</span>
         </div>
         <p>Operator-adaptive calibration models &mdash; AOM-PLS, POP-PLS and AOM-Ridge &mdash; that fold spectral preprocessing directly into the model and replace external preprocessing grid-search. scikit-learn compatible; companion code for the AOM-PLS paper.</p>
         <div class="eco-links">
@@ -1717,6 +1774,7 @@
             <div class="eco-cat">File readers</div>
             <div class="eco-name">nirs4all-formats <span class="eco-lang">Rust</span></div>
           </div>
+          <span class="eco-ver">v0.1.0-alpha</span>
         </div>
         <p>Rust-first, low-level readers for ~58 NIRS &amp; spectroscopy format families. Content-sniffed, lossless, provenance-tracked records with Python, R, WebAssembly and C bindings &mdash; the messy vendor-file zoo turned into one clean data model. Now published on PyPI and crates.io.</p>
         <div class="eco-links">
@@ -1736,9 +1794,11 @@
             <div class="eco-cat">Dataset bridge</div>
             <div class="eco-name">nirs4all-io <span class="eco-lang">Python</span></div>
           </div>
+          <span class="eco-ver">v0.1.0-alpha</span>
         </div>
         <p>A dataset-assembly bridge: turn any input &mdash; a folder, a glob, vendor spectra plus a reference table, or a config &mdash; into a pipeline-ready dataset through resolve &rarr; infer &rarr; configure &rarr; materialize, with a score-based inference engine. Built on nirs4all-formats.</p>
         <div class="eco-links">
+          <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" class="pill pill-teal"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><path d="m10 13 3 2-3 2z" fill="currentColor"/></svg>Live demo</a>
           <a href="https://github.com/GBeurier/nirs4all-io" target="_blank" class="pill pill-cyan"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
           <span class="eco-status">Alpha</span>
         </div>
@@ -1752,9 +1812,11 @@
             <div class="eco-cat">Reference datasets</div>
             <div class="eco-name">nirs4all-datasets <span class="eco-lang">Python</span></div>
           </div>
+          <span class="eco-ver">v0.1.0.dev</span>
         </div>
         <p>A Python library that transparently pulls curated, hand-picked NIRS test datasets from Dataverse &mdash; turning reproducible, DOI-citable benchmarks and lab experiments into a one-line import.</p>
         <div class="eco-links">
+          <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" class="pill pill-cyan">Website</a>
           <a href="https://github.com/GBeurier/nirs4all-datasets" target="_blank" class="pill pill-cyan"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
           <span class="eco-status">Alpha</span>
         </div>
@@ -1768,6 +1830,7 @@
             <div class="eco-cat">Execution core</div>
             <div class="eco-name">dag-ml <span class="eco-lang">Rust &middot; C ABI</span></div>
           </div>
+          <span class="eco-ver">v0.1.0-alpha</span>
         </div>
         <p>A leakage-safe, in-process DAG execution core. It owns the graph, phases, folds, out-of-fold joins, lineage, caching and deterministic RNG &mdash; exposed through a C ABI so any host language can drive reproducible ML pipelines.</p>
         <div class="eco-links">
@@ -1784,6 +1847,7 @@
             <div class="eco-cat">Data contracts</div>
             <div class="eco-name">dag-ml-data <span class="eco-lang">Rust &middot; C ABI</span></div>
           </div>
+          <span class="eco-ver">v0.1.0-alpha</span>
         </div>
         <p>The data-contract and planning layer beneath dag-ml: typed, sample-aligned, multi-source data views, representation adapters, data plans, and schema fingerprints &mdash; the foundation that keeps pipelines reproducible.</p>
         <div class="eco-links">
@@ -1792,18 +1856,21 @@
         </div>
       </div>
 
-      <!-- nirs4all-lite · Cross-language runtime (planned) -->
+      <!-- nirs4all-lite · Browser demo & multi-language distribution -->
       <div class="eco-card cat-dag fade-in">
         <div class="eco-head">
           <span class="eco-logo" data-eco-logo="nirs4all-lite" aria-hidden="true">lt</span>
           <div class="eco-titles">
-            <div class="eco-cat">Cross-language runtime</div>
-            <div class="eco-name">nirs4all-lite <span class="eco-lang">C++ &middot; Rust</span></div>
+            <div class="eco-cat">Browser demo &amp; distribution</div>
+            <div class="eco-name">nirs4all-lite <span class="eco-lang">WASM &middot; JS</span></div>
           </div>
+          <span class="eco-ver">v0.1.0</span>
         </div>
-        <p>A planned cross-language, cross-platform execution kernel that unifies dag-ml, dag-ml-data and the n4 methods&nbsp;/&nbsp;io&nbsp;/&nbsp;formats cores into one full C++/Rust runtime &mdash; the future single binary behind every binding.</p>
+        <p>The browser-native face of the low-level stack: <em>studio-lite</em>, a full-WASM &ldquo;mini Studio&rdquo; that runs the whole NIRS loop &mdash; load spectra, build a pipeline from nirs4all-methods nodes, train, score and predict &mdash; entirely client-side, no Python. Also packages the formats / io / methods / dag-ml cores for non-Python ecosystems.</p>
         <div class="eco-links">
-          <span class="eco-status">Planned</span>
+          <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" class="pill pill-amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><path d="m10 13 3 2-3 2z" fill="currentColor"/></svg>Live demo</a>
+          <a href="https://github.com/GBeurier/nirs4all-lite" target="_blank" class="pill pill-amber"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+          <span class="eco-status">Alpha</span>
         </div>
       </div>
 
@@ -1823,20 +1890,6 @@
         </div>
       </div>
 
-      <!-- nirs4all-papers · Research (coming soon) -->
-      <div class="eco-card cat-soon fade-in">
-        <div class="eco-head">
-          <span class="eco-logo" data-eco-logo="nirs4all-papers" aria-hidden="true">pp</span>
-          <div class="eco-titles">
-            <div class="eco-cat">Research</div>
-            <div class="eco-name">nirs4all-papers</div>
-          </div>
-        </div>
-        <p>A coming repository for the nirs4all research output &mdash; papers, supplementary material, and the executable scenarios behind them, both published and in progress.</p>
-        <div class="eco-links">
-          <span class="eco-status">Coming soon</span>
-        </div>
-      </div>
 
     </div>
     <div class="eco-foot fade-in">
@@ -2262,12 +2315,40 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
         <h4>nirs4all-formats</h4>
         <p>Live demo of the Rust readers for ~58 NIRS &amp; spectroscopy file formats</p>
       </a>
+      <a href="https://gbeurier.github.io/nirs4all-io/" target="_blank" class="link-card">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 3 0 0 0 18 0 9 3 0 0 0-18 0Z"/><path d="M3 12v6a9 3 0 0 0 18 0v-6"/><path d="M3 6a9 3 0 0 0 18 0 9 3 0 0 0-18 0Z"/></svg>
+        </div>
+        <h4>nirs4all-io</h4>
+        <p>Live demo of the dataset-assembly bridge that turns any input into a dataset</p>
+      </a>
+      <a href="https://gbeurier.github.io/nirs4all-datasets/" target="_blank" class="link-card">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+        </div>
+        <h4>nirs4all-datasets</h4>
+        <p>Catalog site for the curated, DOI-citable NIRS reference datasets</p>
+      </a>
+      <a href="https://gbeurier.github.io/nirs4all-lite/" target="_blank" class="link-card">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        </div>
+        <h4>nirs4all-lite</h4>
+        <p>studio-lite &mdash; the whole NIRS loop running in your browser, no Python (WASM)</p>
+      </a>
       <a href="https://pypi.org/project/nirs4all-aom" target="_blank" class="link-card">
         <div class="link-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2a10 10 0 0 1 10 10H12z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
         <h4>nirs4all-aom</h4>
         <p>Operator-adaptive AOM-PLS, POP-PLS &amp; AOM-Ridge calibration models on PyPI</p>
+      </a>
+      <a href="https://github.com/GBeurier/nirs4all-cluster" target="_blank" class="link-card">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v3.6m0 0-5.6 4.6M12 11l5.6 4.6"/></svg>
+        </div>
+        <h4>nirs4all-cluster <span style="font-family:var(--mono);font-size:.62rem;font-weight:600;color:var(--text-3);border:1px solid var(--border);border-radius:100px;padding:1px 7px;vertical-align:middle">alpha</span></h4>
+        <p>Distributed execution of nirs4all pipelines &mdash; a client/server/worker job queue</p>
       </a>
       <a href="https://github.com/GBeurier/nirs4all/issues" target="_blank" class="link-card">
         <div class="link-icon">
@@ -2705,7 +2786,6 @@ results = nirs4all.<span class="fn">run</span>(pipeline=[pipeline_1, pipeline_2]
     "dag-ml-data":       "",                            // TODO: add logo
     "nirs4all-lite":     "assets/logos_ecosystem/logo_lite.png",
     "nirs4all-arena":    "assets/logos_ecosystem/logo_arena.png",
-    "nirs4all-papers":   "assets/logos_ecosystem/logo_papers.png",
   };
   document.querySelectorAll('[data-eco-logo]').forEach(el => {
     const src = ECOSYSTEM_LOGOS[el.dataset.ecoLogo];
