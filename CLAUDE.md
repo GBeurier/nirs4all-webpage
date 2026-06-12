@@ -11,7 +11,7 @@ This is one checkout in the larger nirs4all developer working tree; the ecosyste
 ## Preview & deploy
 
 - **Local preview**: open `index.html` directly in a browser (`file://`). No server, no tooling. Some runtime features (dynamic version fetch, Google Fonts) hit the network but degrade gracefully offline.
-- **Deploy**: `.github/workflows/deploy.yml` publishes to GitHub Pages on every push to `main` (or manual `workflow_dispatch`). It uploads the **entire repo root** as the Pages artifact — there is no build, so whatever is committed is what ships. The custom domain is pinned by `CNAME` (`nirs4all.org`); do not delete it.
+- **Deploy**: GitHub Pages publishes the `main` branch from the repository root (`/`). There is no build step, so whatever is committed is what ships. The custom domain is pinned by `CNAME` (`nirs4all.org`); do not delete it.
 
 ## How `index.html` is organized
 

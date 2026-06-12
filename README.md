@@ -25,9 +25,9 @@ nirs4all-org/
 │   ├── runs-page.png
 │   ├── predictions-page.png
 │   └── inspector-after-refresh.jpg
-└── .github/
-    └── workflows/
-        └── deploy.yml      # GitHub Actions deployment
+├── CNAME                   # GitHub Pages custom domain
+├── robots.txt
+└── sitemap.xml
 ```
 
 ## Content
