@@ -1,0 +1,11 @@
+{
+  "name": "nirs4all-org",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for the nirs4all ecosystem (nirs4all.org)",
+  "homepage": "https://nirs4all.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GBeurier/nirs4all-org.git"
+  }
+}
