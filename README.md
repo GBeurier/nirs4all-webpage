@@ -46,3 +46,10 @@ nirs4all-org/
 
 Developed at [CIRAD](https://www.cirad.fr) / [UMR AGAP Institut](https://umr-agap.cirad.fr)
 by Gregory Beurier, Denis Cornet, and Lauriane Rouan.
+
+## License
+
+The site **content** (text, pages, figures) is licensed **CC-BY-4.0**; the site **code** (HTML/CSS/JS)
+is dual-licensed open-source — **`CeCILL-2.1 OR AGPL-3.0-or-later`** — with an optional **commercial
+license** (for any commercial use, contact <nirs4all-admin@cirad.fr>). See [`LICENSING.md`](LICENSING.md)
+and [`LICENSES/`](LICENSES/). Logos, fonts and partner/institution assets remain under their own terms.

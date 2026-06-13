@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Landing page for the nirs4all ecosystem (nirs4all.org)",
+  "license": "(CECILL-2.1 OR AGPL-3.0-or-later)",
   "homepage": "https://nirs4all.org",
   "repository": {
     "type": "git",
