@@ -38,13 +38,12 @@ without publishing your own source code — a **commercial license** is availabl
 in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md), and the relevant license-family
 texts are bundled under [`LICENSES/`](LICENSES/).
 
-## 4. Content license
+## 4. Repository scope
 
-Documentation, manuscripts, figures, slides, web pages, and dataset metadata in this
-repository (as opposed to source code) are licensed under **Creative Commons Attribution
-4.0 International (CC-BY-4.0)** — see [`LICENSES/CC-BY-4.0.txt`](LICENSES/CC-BY-4.0.txt).
-Where a dataset or third-party asset carries its own license or DOI terms, those upstream
-terms govern that asset.
+Unless a file explicitly states otherwise, this repository's source, documentation, pages,
+figures, and metadata are covered by the open-source license terms above. Where a dataset,
+logo, font, institution mark, or third-party asset carries its own license or DOI terms,
+those upstream terms govern that asset.
 
 ## Recommended SPDX header for source files
 

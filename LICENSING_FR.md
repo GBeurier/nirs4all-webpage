@@ -39,14 +39,13 @@ SaaS** sans publier votre propre code source — une **licence commerciale** est
 dans [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md), et les textes des familles de
 licences concernées sont regroupés dans [`LICENSES/`](LICENSES/).
 
-## 4. Licence du contenu
+## 4. Perimetre du depot
 
-La documentation, les manuscrits, figures, présentations, pages web et métadonnées de
-jeux de données de ce dépôt (par opposition au code source) sont sous **Creative Commons
-Attribution 4.0 International (CC-BY-4.0)** — voir
-[`LICENSES/CC-BY-4.0.txt`](LICENSES/CC-BY-4.0.txt). Lorsqu'un jeu de données ou un actif
-tiers porte sa propre licence ou ses conditions DOI, ces conditions amont prévalent pour
-cet actif.
+Sauf mention explicite contraire dans un fichier, le code source, la documentation, les
+pages, figures et metadonnees de ce depot sont couverts par les termes open-source
+ci-dessus. Lorsqu'un jeu de donnees, logo, police, marque institutionnelle ou actif tiers
+porte sa propre licence ou ses conditions DOI, ces conditions amont prevalent pour cet
+actif.
 
 ## En-tête SPDX recommandé dans les fichiers source
 
